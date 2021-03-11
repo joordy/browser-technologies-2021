@@ -2,6 +2,16 @@
 
 Not every person on earth has a blazing fast internet connection like all Front-end Developers do, with their high-speed internet plan. As a good front-end developer you have to take the entire target group into account. It is possible that the users of your website may have a bad internet connection. This can also be important on the mobile phone. In the big cities you often have a better internet connection than in the suburbs or in the countryside. This can cause a website to sometimes load seconds longer than usual.
 
+## **Table of Content**
+
+| Table of Content                                                    |
+| ------------------------------------------------------------------- |
+| [Which problems](#Find-out-what-problems-the-features-can-cause)    |
+| [How to test](#How-can-you-test-this)                               |
+| [Examples](#Find-a-number-of-sites-where-this-also-causes-problems) |
+| [Solve problems](#How-can-it-be-solved)                             |
+| [Sources](#Sources)                                                 |
+
 ---
 
 ## **Find out what problems the features can cause**
@@ -42,7 +52,7 @@ In this example, I've used the website [**www.bol.com**](www.bol.com), one of Ne
 
 ### **Conclusion**
 
-In this example it takes up to **35000ms** with a **3G** connection to load the complete web page. Compared to my own internet speed, which renders the page in **3500ms**, this is up to 10 times slower
+In this example it takes up to **35000ms** with a **3G** connection to render the complete web page. Compared to my own internet speed, which renders the page in **3500ms**, this is up to 10 times slower
 
 ---
 
@@ -50,11 +60,11 @@ In this example it takes up to **35000ms** with a **3G** connection to load the 
 
 ### Coolblue
 
-I also checked Coolblue, another tech-related reseller in the Netherlands.
+I also checked [CoolBlue](www.coollue.nl), another tech-related reseller in the Netherlands.
 
 #### **Normal conditions**
 
-With the normal conditions, the page content loads in 1500ms, which is pretty fast for a web-page.
+With the normal conditions, the page content renders in 1500ms, which is pretty fast for a web-page.
 
 ![Normal conditions on coolblue home page](https://user-images.githubusercontent.com/48051912/110779203-8c2c0380-8263-11eb-97f9-0569f9834760.png)
 
@@ -100,7 +110,7 @@ You can use tools like [CSS Minifier](https://cssminifier.com/) and [JavaScript 
 
 ### **2. Put JavaScript at the bottom of your page**
 
-When putting your JavaScript source link below the HTML, it will first load the HTML page, so the user gets a faster loading time of this file. This ensures that the user can already see some content, while the rest is still loading.
+When putting your JavaScript source link below the HTML, it will first render the HTML page, so the user gets a faster loading time of this file. This ensures that the user can already see some content, while the rest is still loading.
 
 ```html
 <!DOCTYPE html>
