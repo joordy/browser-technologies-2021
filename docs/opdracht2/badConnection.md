@@ -22,7 +22,7 @@ For example, a problem may be that it does not take 2 to 3 seconds for the entir
 
 ## **How can you test this?**
 
-In this example, I've used the website [**www.bol.com**](www.bol.com), one of Netherlands biggest resellers on the internet.
+In this example, I've used the website [**www.bol.com**](www.bol.com), one of Netherlands biggest resellers on the internet. I've used the inspect element of my browser (brave) to test this out.
 
 ![Homepage of Bol.com](https://user-images.githubusercontent.com/48051912/110778122-3e62cb80-8262-11eb-8546-3240d6bfd65b.png)
 

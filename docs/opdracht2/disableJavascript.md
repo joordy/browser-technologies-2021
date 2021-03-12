@@ -26,7 +26,7 @@ Example: with a Single Page Application, no content is loaded, because it is mai
 
 ## **How can you test this?**
 
-In this example, I've used the website [**www.bol.com**](www.bol.com), one of Netherlands biggest resellers on the internet.
+In this example, I've used the website [**www.bol.com**](www.bol.com), one of Netherlands biggest resellers on the internet. I've used the plugin [Web Developer](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm) to disable JavaScript.
 
 ### **Visit the landing page**
 
