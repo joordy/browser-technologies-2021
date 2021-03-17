@@ -1,5 +1,3 @@
-console.log('hi')
-
 const express = require('express'),
   app = express(),
   path = require('path'),
