@@ -1,0 +1,32 @@
+{
+  "name": "browser-technologies-2021",
+  "version": "1.0.0",
+  "description": "## 🔦 **Case**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joordy/browser-technologies-2021.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joordy/browser-technologies-2021/issues"
+  },
+  "homepage": "https://github.com/joordy/browser-technologies-2021#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "prettier": "^2.2.1"
+  }
+}
