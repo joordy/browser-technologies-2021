@@ -1,6 +1,7 @@
-// cart route function
-const cart = async (req, res) => {
+// toCart route function
+const toCart = async (req, res) => {
   try {
+    console.log(req.body)
     res.render('cart', {
       PageTitle: 'Cart | ShirtDesigns',
     })
@@ -10,4 +11,4 @@ const cart = async (req, res) => {
 }
 
 // Export route
-module.exports = { cart }
+module.exports = { toCart }
