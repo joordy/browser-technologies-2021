@@ -24,6 +24,8 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 
 ## Wireflow
 
+![IMG_0716](https://user-images.githubusercontent.com/48051912/111471911-b54c0880-8729-11eb-93fd-daf6b4a49948.jpg)
+
 ### Functional/reliable
 
 ### Usable
@@ -47,6 +49,7 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 
 - Storage API [link](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API)
 - Touch events [link](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
+- Validity [link](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
 
 ---
 
@@ -69,13 +72,7 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 ### Start local dev environment
 
 ```bash
- // npm run dev
-```
-
-### Build export
-
-```bash
- // npm run build
+  npm run dev
 ```
 
 ---

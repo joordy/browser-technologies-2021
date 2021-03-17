@@ -1,5 +1,19 @@
 <body class="shopPage">
-  <h1>Shop</h1>
-  <a href="/product/:1">To product</a>
+    {{> header}}
+
+    <main>
+      {{#each products }}
+        <article>
+            <a href="/product/{{this.id}}">
+              <h2>{{this.name}}</h2>
+              <h3>{{this.price}}</h3>
+            </a>
+          </article>  
+      {{/each}}
+    </main>
+
+    <footer>
+        <h2>Shop</h2>
+    </footer>
 </body>
 

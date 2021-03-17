@@ -1,4 +1,4 @@
-// Home route function
+// profile route function
 const profile = async (req, res) => {
   try {
     res.render('profile', {

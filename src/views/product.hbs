@@ -1,4 +1,53 @@
 <body class="productPage">
+  {{> header}}
+  
+  <main>
+    <h2>{{product.name}}</h2>
+    <h3>{{product.price}}</h3>
+
+
+
+
+  <form action="/cart" method="POST">
+    <fieldset>
+      <input type="hidden" name="orderID" value="{{uniqueID}}">
+      <input type="hidden" name="productID" value="{{product.id}}">
+      <input type="hidden" name="name" value="{{product.name}}">
+      <input type="hidden" name="type" value="{{product.type}}">
+      <input type="hidden" name="price" value="{{product.price}}">
+      <input type="hidden" name="gender" value="{{product.gender}}">
+
+      <div>
+        <label for="">Color</label>
+          <select name="color" id="color">
+            {{#each product.color }}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+      </div>
+      <div>
+        <label for="">Print</label>
+        <input type="text" name="print" id="" required>
+      </div>
+      <div>
+        <label for="">Size</label>
+        <select name="size" id="size">
+            {{#each product.sizes }}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+      </div>
+
+      <input type="submit" value="Add to cart">
+    </fieldset>
+  </form>
+
+
+
+
+  </main>
+
+
   <h1>product</h1>
   <a href="/cart">To cart</a>
 </body>
