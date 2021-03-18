@@ -5,3 +5,56 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/**** Header ****/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #1d1d1d;
+  padding: 0.5em 1em;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style-type: none;
+  padding: 0.25em 0.5em;
+}
+
+header nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+header nav li:nth-child(1) {
+  display: none;
+}
+
+main {
+  margin: 1em;
+}
+
+/****************** ShopPage ******************/
+
+.shopPage main {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1em;
+}
+
+.shopPage main article a img {
+  width: 100%;
+}

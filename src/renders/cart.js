@@ -1,4 +1,4 @@
-// Home route function
+// cart route function
 const cart = async (req, res) => {
   try {
     res.render('cart', {
