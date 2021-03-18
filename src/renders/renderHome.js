@@ -1,5 +1,5 @@
 // Home route function
-const home = async (req, res) => {
+const renderHome = async (req, res) => {
   try {
     res.redirect('/shop')
   } catch (err) {
@@ -8,4 +8,4 @@ const home = async (req, res) => {
 }
 
 // Export route
-module.exports = { home }
+module.exports = renderHome

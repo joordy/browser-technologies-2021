@@ -22,6 +22,23 @@
         <p>{{orders.color}}</p>
         <img src="{{orders.img}}" alt="">
       </section>
+
+      <form action="/login" method="POST">
+        <fieldset>
+          <input type="hidden" name="orderID" value="{{orders.orderID}}">
+          <input type="hidden" name="productID" value="{{orders.productID}}">
+          <input type="hidden" name="name" value="{{orders.name}}">
+          <input type="hidden" name="type" value="{{orders.type}}">
+          <input type="hidden" name="cat" value="{{orders.categorie}}">
+          <input type="hidden" name="price" value="{{orders.price}}">
+          <input type="hidden" name="gender" value="{{orders.gender}}">
+          <input type="hidden" name="size" value="{{orders.size}}">
+          <input type="hidden" name="print" value="{{orders.print}}">
+          <input type="hidden" name="color" value="{{orders.color}}">
+          <input type="hidden" name="img" value="{{orders.image.small}}">
+          <input type="submit" value="Order items">
+        </fieldset>
+      </form>
     {{else if searchedOrder}}
       <section>
         <img src="{{searchedOrder.img}}" alt="">
@@ -33,11 +50,30 @@
         <p>{{searchedOrder.size}}</p>
         <p>{{searchedOrder.type}}</p>
       </section>
+
+       <form action="/login" method="POST">
+        <fieldset>
+          <input type="hidden" name="orderID" value="{{searchedOrder.orderID}}">
+          <input type="hidden" name="productID" value="{{searchedOrder.productID}}">
+          <input type="hidden" name="name" value="{{searchedOrder.name}}">
+          <input type="hidden" name="type" value="{{searchedOrder.type}}">
+          <input type="hidden" name="cat" value="{{searchedOrder.categorie}}">
+          <input type="hidden" name="price" value="{{searchedOrder.price}}">
+          <input type="hidden" name="gender" value="{{searchedOrder.gender}}">
+          <input type="hidden" name="size" value="{{searchedOrder.size}}">
+          <input type="hidden" name="print" value="{{searchedOrder.print}}">
+          <input type="hidden" name="color" value="{{searchedOrder.color}}">
+          <input type="hidden" name="img" value="{{searchedOrder.image.small}}">
+          <input type="submit" value="Order items">
+        </fieldset>
+      </form>
     {{else}}
       <section>
       <p>No products, go order your T-shirt <a href="/shop">here</a></p>
       </section>
     {{/if}}
+
+
   </main>
 
   {{> footer}}

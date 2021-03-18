@@ -3,14 +3,12 @@ const { products } = require('../data/products.js')
 const { filterByValue } = require('../utils/filter.js')
 
 // product route function
-const product = async (req, res) => {
+const renderProduct = async (req, res) => {
   try {
     const id = req.url.replace('/product/', '')
     const data = filterByValue(products, id)
-    const uniqueID = uniqid()
-    // console.log(data[0])
+    const uniqueID = uniqid('order_')
 
-    console.log(data[0])
     res.render('product', {
       PageTitle: 'product | ShirtDesigns',
       product: data[0],
@@ -22,4 +20,4 @@ const product = async (req, res) => {
 }
 
 // Export route
-module.exports = { product }
+module.exports = renderProduct

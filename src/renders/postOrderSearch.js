@@ -1,15 +1,15 @@
-const admin = require('./../data/db')
+const admin = require('../data/db')
 const database = admin.database()
 
 // toCart route function
-const searchOrder = async (req, res) => {
+const postOrderSearch = async (req, res) => {
   try {
     database
       .ref('orders/' + req.body.searchID)
       .once('value')
       .then((snapshot) => {
         const data = snapshot.val()
-        console.log(data.order)
+        console.log('Searched order:', data.order)
         res.render('cart', {
           PageTitle: 'Your orders | ShirtDesigns',
           searchedOrder: data.order,
@@ -21,4 +21,4 @@ const searchOrder = async (req, res) => {
 }
 
 // Export route
-module.exports = { searchOrder }
+module.exports = postOrderSearch

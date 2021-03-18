@@ -10,4 +10,4 @@ const cart = async (req, res) => {
 }
 
 // Export route
-module.exports = { cart }
+module.exports = cart
