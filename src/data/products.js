@@ -1,3 +1,4 @@
+// Products to display on shop page
 let products = [
   {
     id: 10001,
