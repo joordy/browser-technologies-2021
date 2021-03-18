@@ -12,6 +12,7 @@ const { cart } = require('./../renders/cart')
 const { toCart } = require('./../renders/toCart')
 const { profile } = require('./../renders/profile')
 const { error } = require('./../renders/error')
+const { searchOrder } = require('./../renders/searchOrder')
 
 // Setting get routes
 router.get('/', home)
@@ -23,6 +24,7 @@ router.get('/*', error)
 
 // Setting post routes
 router.post('/cart', urlencodedParser, toCart)
+router.post('/myCart', urlencodedParser, searchOrder)
 
 // Export router module
 module.exports = router

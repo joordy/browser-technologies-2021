@@ -1,17 +1,46 @@
 <body class="cartPage">
   {{> header}}
 
-  {{#if orders }}
-    <p>{{orders.orderID}}</p>
-    <p>{{orders.productID}}</p>
-    <p>{{orders.name}}</p>
-    <p>{{orders.type}}</p>
-    <p>{{orders.price}}</p>
-    <p>{{orders.size}}</p>
-    <p>{{orders.print}}</p>
-    <p>{{orders.color}}</p>
-    <img src="{{orders.img}}" alt="">
-  {{/if}}
-  <h1>Cart</h1>
+  <main>
+    <form action="/myCart" method="POST">
+      <fieldset>    
+        <label for="">Look for order</label>
+        <input type="text" name="searchID">
+        <input type="submit" value="searchOrder"> 
+      </fieldset>  
+    </form>
+
+    {{#if orders }}
+      <section>
+        <p>{{orders.orderID}}</p>
+        <p>{{orders.productID}}</p>
+        <p>{{orders.name}}</p>
+        <p>{{orders.type}}</p>
+        <p>{{orders.price}}</p>
+        <p>{{orders.size}}</p>
+        <p>{{orders.print}}</p>
+        <p>{{orders.color}}</p>
+        <img src="{{orders.img}}" alt="">
+      </section>
+    {{else if searchedOrder}}
+      <section>
+        <img src="{{searchedOrder.img}}" alt="">
+        <p>{{searchedOrder.orderID}}</p>
+        <p>{{searchedOrder.gender}}</p>
+        <p>{{searchedOrder.name}}</p>
+        <p>{{searchedOrder.price}}</p>
+        <p>{{searchedOrder.print}}</p>
+        <p>{{searchedOrder.size}}</p>
+        <p>{{searchedOrder.type}}</p>
+      </section>
+    {{else}}
+      <section>
+      <p>No products, go order your T-shirt <a href="/shop">here</a></p>
+      </section>
+    {{/if}}
+  </main>
+
+  {{> footer}}
+
 </body>
 

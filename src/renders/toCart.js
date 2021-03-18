@@ -1,4 +1,8 @@
+const admin = require('./../data/db')
 const { checkColor } = require('../utils/filter.js')
+
+const database = admin.database()
+// const ofirebase = require('../firebase/setData.js')
 
 // toCart route function
 const toCart = async (req, res) => {
@@ -15,6 +19,9 @@ const toCart = async (req, res) => {
       print: req.body.print,
       size: req.body.size,
     }
+    database.ref('/orders/' + req.body.orderID).set({
+      order,
+    })
 
     res.render('cart', {
       PageTitle: 'Cart | ShirtDesigns',
