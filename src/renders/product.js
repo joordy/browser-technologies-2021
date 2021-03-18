@@ -10,6 +10,7 @@ const product = async (req, res) => {
     const uniqueID = uniqid()
     // console.log(data[0])
 
+    console.log(data[0])
     res.render('product', {
       PageTitle: 'product | ShirtDesigns',
       product: data[0],

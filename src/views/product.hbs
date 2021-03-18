@@ -2,53 +2,89 @@
   {{> header}}
   
   <main>
+    <picture>
+      {{#each product.image.normal}}
+        <source media="(min-width:650px)" srcset="{{this}}">
+      {{/each}}
+      {{#each product.image.small}}
+        <img src="{{this}}" alt="">
+      {{/each}}
+    </picture>
     <h2>{{product.name}}</h2>
     <h3>{{product.price}}</h3>
 
+    <form action="/cart" method="POST">
+      <fieldset>
+        <input type="hidden" name="orderID" value="{{uniqueID}}">
+        <input type="hidden" name="productID" value="{{product.id}}">
+        <input type="hidden" name="name" value="{{product.name}}">
+        <input type="hidden" name="type" value="{{product.type}}">
+        <input type="hidden" name="cat" value="{{product.categorie}}">
+        <input type="hidden" name="price" value="{{product.price}}">
+        <input type="hidden" name="gender" value="{{product.gender}}">
+        <input type="hidden" name="img" value="{{product.image.small}}">
 
+        <div>
+          <label for="">Color</label>
+            <select name="color" id="color">
+              {{#each product.color }}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+        </div>
+        <div>
+          <label for="">Print</label>
+          <input type="text" name="print" id="" required>
+        </div>
+        <div>
+          <label for="">Size</label>
+          <select name="size" id="size">
+              {{#each product.sizes }}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+        </div>
 
+        <input type="submit" value="Add to cart">
+      </fieldset>
+    </form>
 
-  <form action="/cart" method="POST">
-    <fieldset>
-      <input type="hidden" name="orderID" value="{{uniqueID}}">
-      <input type="hidden" name="productID" value="{{product.id}}">
-      <input type="hidden" name="name" value="{{product.name}}">
-      <input type="hidden" name="type" value="{{product.type}}">
-      <input type="hidden" name="price" value="{{product.price}}">
-      <input type="hidden" name="gender" value="{{product.gender}}">
-
-      <div>
-        <label for="">Color</label>
-          <select name="color" id="color">
-            {{#each product.color }}
-              <option value="{{this}}">{{this}}</option>
-            {{/each}}
-          </select>
-      </div>
-      <div>
-        <label for="">Print</label>
-        <input type="text" name="print" id="" required>
-      </div>
-      <div>
-        <label for="">Size</label>
-        <select name="size" id="size">
-            {{#each product.sizes }}
-              <option value="{{this}}">{{this}}</option>
-            {{/each}}
-          </select>
-      </div>
-
-      <input type="submit" value="Add to cart">
-    </fieldset>
-  </form>
-
-
-
-
+    <h4>Product information</h4>
+    <section>
+      <details> 
+        <summary>Product ID</summary>
+        <p>{{product.id}}</p>
+      </details>
+      <details> 
+        <summary>Gender</summary>
+        <p>{{product.gender}}</p>
+      </details>
+      <details> 
+        <summary>Material</summary>
+        <ul>
+          <li>Outer: {{product.material.outer}}</li>
+          <li>Washing: {{product.material.washing}}</li>
+        </ul>
+      </details>
+      <details> 
+        <summary>About the product</summary>
+        <ul>
+          <li>Neckline: {{product.aboutProduct.neckline}}</li>
+          <li>Pattern: {{product.aboutProduct.pattern}}</li>
+          <li>Item Number: {{product.aboutProduct.itemNumber}}</li>
+        </ul>
+      </details>
+      <details> 
+        <summary>Durability</summary>
+        <p>{{product.durability.contains}}</p>
+        <p>{{product.durability.desc}}</p>
+      </details>
+      <details> 
+        <summary>Reviews</summary>
+        <!-- <p>{{product.reviews.one}}</p>
+        <p>{{product.reviews.two}}</p> -->
+      </details>
+    </section>
   </main>
-
-
-  <h1>product</h1>
-  <a href="/cart">To cart</a>
 </body>
 

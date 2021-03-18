@@ -1,8 +1,16 @@
 <body class="cartPage">
   {{> header}}
 
-      {{#if orders }}
-    <p>{{this.orderID}}</p>
+  {{#if orders }}
+    <p>{{orders.orderID}}</p>
+    <p>{{orders.productID}}</p>
+    <p>{{orders.name}}</p>
+    <p>{{orders.type}}</p>
+    <p>{{orders.price}}</p>
+    <p>{{orders.size}}</p>
+    <p>{{orders.print}}</p>
+    <p>{{orders.color}}</p>
+    <img src="{{orders.img}}" alt="">
   {{/if}}
   <h1>Cart</h1>
 </body>
