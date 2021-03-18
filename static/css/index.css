@@ -54,3 +54,7 @@ main {
   grid-template-columns: auto auto;
   grid-gap: 1em;
 }
+
+.shopPage main article a img {
+  width: 100%;
+}
