@@ -1,7 +1,7 @@
 const postLogin = (req, res, next) => {
   try {
     console.log('Login page', req.body)
-    res.render('account', {
+    res.render('createAccount', {
       PageTitle: 'Create account | PhotoPaint',
       orders: req.body,
     })

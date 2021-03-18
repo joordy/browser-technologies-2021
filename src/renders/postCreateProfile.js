@@ -6,11 +6,77 @@ const database = admin.database()
 const postCreateProfile = async (req, res) => {
   try {
     const newID = uniqid('user_')
+    const imageURL = {
+      small: 'images/photo_of_me_small.png',
+      normal: 'images/photo_of_me.png',
+    }
 
-    if (req.body !== undefined) {
-      console.log('bestaat')
+    if (req.body.orderID === '') {
+      console.log('Product is empty / not exist')
+
       database.ref(`/users/${newID}`).set({
         customerID: newID,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        photo: imageURL,
+        allOrders: [],
+      })
+
+      // console.log(req.body)
+      // console.log('bestaat')
+      // database.ref(`/users/${newID}`).set({
+      //   customerID: newID,
+      //   firstname: req.body.firstname,
+      //   lastname: req.body.lastname,
+      //   email: req.body.email,
+      //   photo: imageURL,
+      //   allOrders: [
+      //     {
+      //       orderID: req.body.orderID,
+      //       productID: req.body.productID,
+      //       name: req.body.name,
+      //       type: req.body.type,
+      //       price: req.body.price,
+      //       gender: req.body.gender,
+      //       img: req.body.img,
+      //       color: req.body.color,
+      //       print: req.body.print,
+      //       size: req.body.size,
+      //     },
+      //   ],
+      // })
+      res.render('profile', {
+        PageTitle: 'Profile | ShirtDesigns',
+        customer: {
+          id: newID,
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          email: req.body.email,
+          photo: imageURL,
+          // orders: {
+          //   orderID: req.body.orderID,
+          //   productID: req.body.productID,
+          //   name: req.body.name,
+          //   type: req.body.type,
+          //   price: req.body.price,
+          //   gender: req.body.gender,
+          //   img: req.body.img,
+          //   color: req.body.color,
+          //   print: req.body.print,
+          //   size: req.body.size,
+          // },
+        },
+      })
+    } else {
+      console.log('Product exist')
+
+      database.ref(`/users/${newID}`).set({
+        customerID: newID,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        photo: imageURL,
         allOrders: [
           {
             orderID: req.body.orderID,
@@ -26,18 +92,30 @@ const postCreateProfile = async (req, res) => {
           },
         ],
       })
-    } else {
-      console.log('empty')
-      database.ref(`/users/${newID}`).set({
-        customerID: newID,
-        allOrders: [],
+
+      res.render('profile', {
+        PageTitle: 'Profile | ShirtDesigns',
+        customer: {
+          id: newID,
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          email: req.body.email,
+          photo: imageURL,
+          orders: {
+            orderID: req.body.orderID,
+            productID: req.body.productID,
+            name: req.body.name,
+            type: req.body.type,
+            price: req.body.price,
+            gender: req.body.gender,
+            img: req.body.img,
+            color: req.body.color,
+            print: req.body.print,
+            size: req.body.size,
+          },
+        },
       })
     }
-
-    res.render('profile', {
-      PageTitle: 'Profile | ShirtDesigns',
-      customerID: newID,
-    })
   } catch (err) {
     console.log(err)
   }

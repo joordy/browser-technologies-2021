@@ -1,8 +1,16 @@
 <body class="profilePage">
     {{> header}}
+    <picture>
+        <source media="(min-width:650px)" srcset="{{customer.photo.normal}}">
+        <img src="{{customer.photo.small}}" alt="">
+    </picture>
+    <h2>{{customer.firstname}}, {{customer.lastname}}</h2>
+    <h3>Mail: {{customer.email}}</h3>
+    <h4>ID: {{customer.id}}</h4>
 
-    <h2>Your account ID is: {{customerID}}</h2>
-  
+    {{#if customer.orders}}
+      <p>order exist</p>
+    {{/if}}
   {{> footer}}
 
 </body>
