@@ -1,32 +1,32 @@
 <body class="shopPage">
-    {{> header}}
+  {{> header}}
 
-    <main>
-      {{#each products }}
-        <article>
-            <a href="/product/{{this.id}}">
-              {{#if this.image}}
-                <picture>
-                  {{#each this.image.normal}}
-                    <source media="(min-width:650px)" srcset="{{this}}">
-                  {{/each}}
-                  {{#each this.image.small}}
-                    <img src="{{this}}" alt="">
-                  {{/each}}
-                </picture>
-              {{/if}}
-              <h2>{{this.name}}</h2>
-              <h3>{{this.price}}</h3>
-            </a>
-          </article>  
-      {{/each}}
-    </main>
+  <main>
+    
+    {{#each products }}
+      <article>
+          <a href="/product/{{this.id}}">
+            {{#if this.image}}
+              <picture>
+                {{#each this.image.normal}}
+                  <source media="(min-width:650px)" srcset="{{this}}">
+                {{/each}}
+                {{#each this.image.small}}
+                  <img src="{{this}}" alt="">
+                {{/each}}
+              </picture>
+            {{/if}}
+            <h2>{{this.name}}</h2>
+            <h3>{{this.price}}</h3>
+          </a>
+        </article>  
+    {{/each}}
 
-    <footer>
-        <h2>Shop</h2>
-    </footer>
+  </main>
+
+  {{> footer}}
+
 </body>
-
 
 
 
