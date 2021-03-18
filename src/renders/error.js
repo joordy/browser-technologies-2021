@@ -9,4 +9,4 @@ const error = async (req, res) => {
 }
 
 // Export route
-module.exports = { error }
+module.exports = error

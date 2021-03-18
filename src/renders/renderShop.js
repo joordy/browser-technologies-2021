@@ -1,7 +1,7 @@
 const { products } = require('../data/products.js')
 
 // shop route function
-const shop = async (req, res) => {
+const renderShop = async (req, res) => {
   try {
     let data = products
 
@@ -16,4 +16,4 @@ const shop = async (req, res) => {
 }
 
 // Export route
-module.exports = { shop }
+module.exports = renderShop

@@ -1,11 +1,11 @@
-const admin = require('./../data/db')
+const admin = require('../data/db')
 const { checkColor } = require('../utils/filter.js')
 
 const database = admin.database()
 // const ofirebase = require('../firebase/setData.js')
 
 // toCart route function
-const toCart = async (req, res) => {
+const postShoppingCard = async (req, res) => {
   try {
     const order = {
       orderID: req.body.orderID,
@@ -19,6 +19,7 @@ const toCart = async (req, res) => {
       print: req.body.print,
       size: req.body.size,
     }
+
     database.ref('/orders/' + req.body.orderID).set({
       order,
     })
@@ -33,4 +34,4 @@ const toCart = async (req, res) => {
 }
 
 // Export route
-module.exports = { toCart }
+module.exports = postShoppingCard
