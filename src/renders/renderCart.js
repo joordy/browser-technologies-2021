@@ -1,6 +1,8 @@
 // cart route function
 const cart = async (req, res) => {
   try {
+    // console.log(req.body)
+
     res.render('cart', {
       PageTitle: 'Cart | ShirtDesigns',
     })

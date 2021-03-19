@@ -2,76 +2,137 @@
   {{> header}}
 
   <main>
-    <form action="/myCart" method="POST">
+    <!--<form action="/myCart" method="POST">
       <fieldset>    
         <label for="">Look for order</label>
         <input type="text" name="searchID">
         <input type="submit" value="searchOrder"> 
       </fieldset>  
-    </form>
+    </form> -->
 
     {{#if orders }}
       <section>
-        <p>{{orders.orderID}}</p>
-        <p>{{orders.productID}}</p>
-        <p>{{orders.name}}</p>
-        <p>{{orders.type}}</p>
-        <p>{{orders.price}}</p>
-        <p>{{orders.size}}</p>
-        <p>{{orders.print}}</p>
-        <p>{{orders.color}}</p>
         <img src="{{orders.img}}" alt="">
+        <p>Order ID: {{orders.orderID}}</p>
+        <p>Product ID: {{orders.productID}}</p>
+        <p>Name: {{orders.name}}</p>
+        <p>Type: {{orders.type}}</p>
+        <p>Price: {{orders.price}}</p>
+        <p>Size: {{orders.size}}</p>
+        <p>Printed text: {{orders.print}}</p>
+        <p>Color: {{orders.color}}</p>
       </section>
 
-      <form action="/login" method="POST">
-        <fieldset>
-          <input type="hidden" name="orderID" value="{{orders.orderID}}">
-          <input type="hidden" name="productID" value="{{orders.productID}}">
-          <input type="hidden" name="name" value="{{orders.name}}">
-          <input type="hidden" name="type" value="{{orders.type}}">
-          <input type="hidden" name="cat" value="{{orders.categorie}}">
-          <input type="hidden" name="price" value="{{orders.price}}">
-          <input type="hidden" name="gender" value="{{orders.gender}}">
-          <input type="hidden" name="size" value="{{orders.size}}">
-          <input type="hidden" name="print" value="{{orders.print}}">
-          <input type="hidden" name="color" value="{{orders.color}}">
-          <input type="hidden" name="img" value="{{orders.image.small}}">
-          <input type="submit" value="Order items">
-        </fieldset>
-      </form>
-    {{else if searchedOrder}}
+      <h2>Sign in or register</h2>
+
       <section>
-        <img src="{{searchedOrder.img}}" alt="">
-        <p>{{searchedOrder.orderID}}</p>
-        <p>{{searchedOrder.gender}}</p>
-        <p>{{searchedOrder.name}}</p>
-        <p>{{searchedOrder.price}}</p>
-        <p>{{searchedOrder.print}}</p>
-        <p>{{searchedOrder.size}}</p>
-        <p>{{searchedOrder.type}}</p>
+        <form action="/create-profile" method="POST">
+          <fieldset>
+            <input type="hidden" name="orderID" value="{{orders.orderID}}">
+            <input type="hidden" name="productID" value="{{orders.productID}}">
+            <input type="hidden" name="name" value="{{orders.name}}">
+            <input type="hidden" name="type" value="{{orders.type}}">
+            <input type="hidden" name="cat" value="{{orders.categorie}}">
+            <input type="hidden" name="price" value="{{orders.price}}">
+            <input type="hidden" name="gender" value="{{orders.gender}}">
+            <input type="hidden" name="size" value="{{orders.size}}">
+            <input type="hidden" name="print" value="{{orders.print}}">
+            <input type="hidden" name="color" value="{{orders.color}}">
+            <input type="hidden" name="img" value="{{orders.img}}">
+
+            <div>
+              <label for="">First name:</label>
+              <input type="text" name="firstname">
+            </div>
+
+            <div>
+              <label for="">Last name:</label>
+              <input type="text" name="lastname">
+            </div>
+
+            <div>
+              <label for="">Email:</label>
+              <input type="text" name="email">
+            </div>
+
+
+            <input type="submit" value="Register and order">
+          </fieldset>
+        </form>
       </section>
 
-       <form action="/login" method="POST">
-        <fieldset>
-          <input type="hidden" name="orderID" value="{{searchedOrder.orderID}}">
-          <input type="hidden" name="productID" value="{{searchedOrder.productID}}">
-          <input type="hidden" name="name" value="{{searchedOrder.name}}">
-          <input type="hidden" name="type" value="{{searchedOrder.type}}">
-          <input type="hidden" name="cat" value="{{searchedOrder.categorie}}">
-          <input type="hidden" name="price" value="{{searchedOrder.price}}">
-          <input type="hidden" name="gender" value="{{searchedOrder.gender}}">
-          <input type="hidden" name="size" value="{{searchedOrder.size}}">
-          <input type="hidden" name="print" value="{{searchedOrder.print}}">
-          <input type="hidden" name="color" value="{{searchedOrder.color}}">
-          <input type="hidden" name="img" value="{{searchedOrder.image.small}}">
-          <input type="submit" value="Order items">
-        </fieldset>
-      </form>
+      <section>
+        <form action="/login-profile" method="POST">
+          <fieldset>
+            <input type="hidden" name="orderID" value="{{orders.orderID}}">
+            <input type="hidden" name="productID" value="{{orders.productID}}">
+            <input type="hidden" name="name" value="{{orders.name}}">
+            <input type="hidden" name="type" value="{{orders.type}}">
+            <input type="hidden" name="cat" value="{{orders.categorie}}">
+            <input type="hidden" name="price" value="{{orders.price}}">
+            <input type="hidden" name="gender" value="{{orders.gender}}">
+            <input type="hidden" name="size" value="{{orders.size}}">
+            <input type="hidden" name="print" value="{{orders.print}}">
+            <input type="hidden" name="color" value="{{orders.color}}">
+            <input type="hidden" name="img" value="{{orders.img}}">
+
+            <div>
+              <label for="">Customer ID</label>
+              <input type="text" name="customerID">
+            </div>
+
+            <input type="submit" value="Log in and order">
+          </fieldset>
+        </form>
+      </section>
+
     {{else}}
       <section>
-      <p>No products, go order your T-shirt <a href="/shop">here</a></p>
+        <p>No products, go order your T-shirt <a href="/shop">here</a></p>      
+
+        
+        <h2>Sign in or register</h2>
+  
+      </section>
+
+      <section>
+        <form action="/create-profile" method="POST">
+          <fieldset>
+            <div>
+              <label for="">First name:</label>
+              <input type="text" name="firstname">
+            </div>
+
+            <div>
+              <label for="">Last name:</label>
+              <input type="text" name="lastname">
+            </div>
+
+            <div>
+              <label for="">Email:</label>
+              <input type="text" name="email">
+            </div>
+
+
+            <input type="submit" value="Register and order">
+          </fieldset>
+        </form>
+      </section>
+
+      <section>
+        <form action="/login-profile" method="POST">
+          <fieldset>
+            <div>
+              <label for="">Customer ID</label>
+              <input type="text" name="customerID">
+            </div>
+
+            <input type="submit" value="Log in and order">
+          </fieldset>
+        </form>
       </section>
     {{/if}}
+
 
 
   </main>
