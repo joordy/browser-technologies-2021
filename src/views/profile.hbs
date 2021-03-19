@@ -1,8 +1,53 @@
 <body class="profilePage">
-    {{> header}}
+  {{> header}}
 
-    <h2>Your account ID is: {{customerID}}</h2>
-  
+  <main>
+    <picture>
+        <source media="(min-width:650px)" srcset="{{customer.photo.normal}}">
+        <img src="{{customer.photo.small}}" alt="">
+    </picture>
+    <h2>{{customer.firstname}}, {{customer.lastname}}</h2>
+    <h3>Mail: {{customer.email}}</h3>
+    <h4>ID: {{customer.id}}</h4>
+
+    {{#if customer.orders}}
+      {{#each customer.orders}}
+        <section>
+          <article>
+            <img src="{{this.img}}" alt="">
+            <ul>
+              <li>{{this.color}}</li>  
+              <li>{{this.gender}}</li>  
+              <li>{{this.productID}}</li>  
+              <li>{{this.orderID}}</li>  
+              <li>{{this.size}}</li>  
+              <li>{{this.type}}</li>  
+              <li>{{this.print}}</li>  
+              <li>{{this.name}}</li>  
+            </ul>
+          </article>
+          
+          <article>
+            <form action="/products/{{this.orderID}}" method="POST">
+              <input type="hidden" name="orderID" value="{{this.orderID}}">
+              <input type="hidden" name="customerID" value="{{this.customerID}}">
+              <input type="submit" value="Edit">
+            </form>
+
+            <form action="/profile" method="POST">
+              <input type="hidden" name="orderID" value="{{this.orderID}}">
+              <input type="hidden" name="customerID" value="{{this.customerID}}">
+
+              <input type="submit" value="Delete">
+            </form>
+          </article>
+        </section>
+      {{/each}}
+    {{else}}
+      <p>You have no products ordered/saved yet.</p>
+    {{/if}}
+  </main>
+
   {{> footer}}
 
 </body>

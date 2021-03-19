@@ -5,19 +5,33 @@
     <h2>Create account</h2>
     <form action="/create-profile" method="POST">
       <fieldset>
-          <input type="hidden" name="orderID" value="{{orders.orderID}}">
-          <input type="hidden" name="productID" value="{{orders.productID}}">
-          <input type="hidden" name="name" value="{{orders.name}}">
-          <input type="hidden" name="type" value="{{orders.type}}">
-          <input type="hidden" name="cat" value="{{orders.categorie}}">
-          <input type="hidden" name="price" value="{{orders.price}}">
-          <input type="hidden" name="gender" value="{{orders.gender}}">
-          <input type="hidden" name="size" value="{{orders.size}}">
-          <input type="hidden" name="print" value="{{orders.print}}">
-          <input type="hidden" name="color" value="{{orders.color}}">
-          <input type="hidden" name="img" value="{{orders.image.small}}">
+        <input type="hidden" name="orderID" value="{{orders.orderID}}">
+        <input type="hidden" name="productID" value="{{orders.productID}}">
+        <input type="hidden" name="name" value="{{orders.name}}">
+        <input type="hidden" name="type" value="{{orders.type}}">
+        <input type="hidden" name="cat" value="{{orders.categorie}}">
+        <input type="hidden" name="price" value="{{orders.price}}">
+        <input type="hidden" name="gender" value="{{orders.gender}}">
+        <input type="hidden" name="size" value="{{orders.size}}">
+        <input type="hidden" name="print" value="{{orders.print}}">
+        <input type="hidden" name="color" value="{{orders.color}}">
+        <input type="hidden" name="img" value="{{orders.image.small}}">
 
-     
+        <div>
+          <label for="">First name:</label>
+          <input type="text" name="firstname">
+        </div>
+
+        <div>
+          <label for="">Last name:</label>
+          <input type="text" name="lastname">
+        </div>
+
+        <div>
+          <label for="">Email:</label>
+          <input type="text" name="email">
+        </div>
+
 
         <input type="submit" value="Maak account aan">
       </fieldset>
