@@ -7,14 +7,27 @@
       <article>
           <a href="/product/{{this.id}}">
             {{#if this.image}}
-              <picture>
-                {{#each this.image.normal}}
-                  <source media="(min-width:650px)" srcset="{{this}}">
-                {{/each}}
-                {{#each this.image.small}}
-                  <img src="{{this}}" alt="">
-                {{/each}}
-              </picture>
+              <div>
+                <picture>
+                    <img src="{{this.image.normal}}" alt="">
+                    <source media="(min-width:650px)" srcset="{{this.image}}">
+
+                  {{!-- {{#each this.image.normal[0]}}
+                    <source media="(min-width:650px)" srcset="{{this}}">
+                  {{/each}}
+                  {{#each this.image.small[0]}}
+                    <img src="{{this}}" alt="">
+                  {{/each}} --}}
+                </picture>
+                <picture>
+                  {{!-- {{#each this.image.normal[1]}}
+                    <source media="(min-width:650px)" srcset="{{this}}">
+                  {{/each}}
+                  {{#each this.image.small[1]}}
+                    <img src="{{this}}" alt="">
+                  {{/each}} --}}
+                </picture>
+              </div>
             {{/if}}
             <h2>{{this.name}}</h2>
             <h3>{{this.price}}</h3>
@@ -31,3 +44,4 @@
 
 
     
+

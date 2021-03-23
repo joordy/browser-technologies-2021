@@ -1,4 +1,5 @@
 const admin = require('../data/db')
+
 const { checkColor } = require('../utils/filter.js')
 
 const database = admin.database()
@@ -27,6 +28,7 @@ const postToEditor = async (req, res) => {
         console.log('editable', req.body)
         res.render('editProduct', {
           PageTitle: 'Edit product | ShirtDesigns',
+          placeholder: data[0],
         })
         // database.ref(`/users/${req.body.customerID}/allOrders/`).push(newItem)
 

@@ -53,8 +53,26 @@ main {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1em;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 5em;
+}
+
+.shopPage main article a picture {
+  display: flex;
 }
 
 .shopPage main article a img {
-  width: 100%;
+  width: 50%;
+}
+
+/****************** ProductPage ******************/
+
+.productPage main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.productPage main picture {
+  display: flex;
 }
