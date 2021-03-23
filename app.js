@@ -27,5 +27,5 @@ app
 
 // Launch application
 app.listen(port, function () {
-  console.log(`App can be opened on https://localhost:${port}`)
+  console.log(`App can be opened on http://localhost:${port}`)
 })

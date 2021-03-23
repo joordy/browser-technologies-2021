@@ -14,6 +14,7 @@ const postShoppingCard = require('../renders/postShoppingCard')
 const postCreateProfile = require('../renders/postCreateProfile')
 const postGetProfile = require('./../renders/postGetProfile')
 const postToEditor = require('./../renders/postToEditor')
+const postDeletedOrder = require('./../renders/postDeletedOrder')
 
 // Setting get routes
 router.get('/', renderHome)
@@ -27,6 +28,7 @@ router.post('/products/:id', urlencodedParser, postToEditor)
 router.post('/cart', urlencodedParser, postShoppingCard)
 router.post('/create-profile', urlencodedParser, postCreateProfile)
 router.post('/login-profile', urlencodedParser, postGetProfile)
+router.post('/profile/deleted-order', urlencodedParser, postDeletedOrder)
 
 // Export router module
 module.exports = router

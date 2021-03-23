@@ -24,6 +24,7 @@
               <li>{{this.type}}</li>  
               <li>{{this.print}}</li>  
               <li>{{this.name}}</li>  
+              <li>{{this.customerID}}</li>
             </ul>
           </article>
           
@@ -34,7 +35,7 @@
               <input type="submit" value="Edit">
             </form>
 
-            <form action="/profile" method="POST">
+            <form action="/profile/deleted-order" method="POST">
               <input type="hidden" name="orderID" value="{{this.orderID}}">
               <input type="hidden" name="customerID" value="{{this.customerID}}">
 

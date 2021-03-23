@@ -2,7 +2,9 @@
 
 ## 🔦 **Case**
 
-### Nerdy T-Shirt
+For the final assignment it is important to develop an interactive application according to the principles of Progressive Enhancement. It must be ensured that the users, on all browsers, and in every possible context can use the interactive application. The most enhanced version is 'pleasurable', so that it is good and pleasant for the user to use.
+
+### **Nerdy T-Shirt**
 
 I want to be able to design my own t-shirt with nerdy text, save it, order it, and use it next time I visit the site.
 
@@ -18,34 +20,53 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 
 ---
 
-## 🌐 **Live link**
+## **Wireflow**
 
----
+![frames](https://user-images.githubusercontent.com/48051912/112219775-bf886e00-8c25-11eb-8b61-45294b77576f.png)
 
-## Wireflow
+### **Basic sketches**
 
 ![IMG_0716](https://user-images.githubusercontent.com/48051912/111471911-b54c0880-8729-11eb-93fd-daf6b4a49948.jpg)
 
-### Functional/reliable
-
-### Usable
-
-### Pleasurable
-
 ---
 
-## Browser Technologies
+### **Layers**
 
-### Web technology
+#### **Functional**
+
+- HTML content works properly
+- User can order t-shirt using form
+- User can log in to add shirt to profile
+
+#### **Reliable**
+
+- Form validation works, user can't make small mistakes
+
+#### **Usable**
+
+- CSS adds styling
+- Javascript for extra validation
+
+#### **Pleasurable**
+
+- Print will be displayed on shirt
+- User can remove shirt by using swipe gestures on phone
+
+### **Browsers**
+
+- Brave browser (MacOS)
+- Firefox (MacOS)
+- Safari (iOS)
+- Chrome (Android emulator)
+
+### **Web technology**
 
 - Vibration
 - Screen orientation?
 - No images
 - No mouse
--
--
 
-### Web API's
+### **Web API's**
 
 - Storage API [link](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API)
 - Touch events [link](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
@@ -53,14 +74,22 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 
 ---
 
+## 🌐 **Live link**
+
+Hosted application: [shirtdesigns.app](https://shirtdesigns.herokuapp.com/)
+
+---
+
 ## 🚀 **Features**
+
+---
 
 ## 💻 **Installation**
 
 ### Clone the repository
 
 ```bash
-  git clone https://github.com/joordy/progressive-web-apps-2021.git
+  git clone https://github.com/joordy/browser-technologies-2021.git
 ```
 
 ### Navigate to the repository and nstall the packages
