@@ -96,19 +96,19 @@ form fieldset {
 }
 
 form div {
+  display: flex;
+  flex-direction: column;
   padding: 0.5rem 0;
-}
-form > div:nth-child(1) {
 }
 
 form label {
-  /* padding: 0 0 1rem 0; */
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 form input {
+  margin-top: 0.5rem;
   padding: 0.5rem;
   background-color: #f7f7f7;
   border: 1px solid black;
