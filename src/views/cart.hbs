@@ -12,11 +12,12 @@
 
     {{#if orders }}
       <section>
-        <article>
+        <h2>Ordered products</h2>
+        <aside>
           <img src="{{orders.img}}" alt="">
-        </article>
+        </aside>
 
-        <article>
+        <aside>
           <div>
             <p>Order ID: {{orders.orderID}}</p>
             <p>Product ID: {{orders.productID}}</p>
@@ -29,13 +30,12 @@
             <p>Printed text: {{orders.print}}</p>
             <p>Color: {{orders.color}}</p>
           </div>
-        </article>
+        </aside>
       </section>
-
-      <h2>Sign in or register</h2>
 
       <section>
         <form action="/create-profile" method="POST">
+          <h3>Register</h3>
           <fieldset>
             <input type="hidden" name="orderID" value="{{orders.orderID}}">
             <input type="hidden" name="productID" value="{{orders.productID}}">
@@ -50,17 +50,17 @@
             <input type="hidden" name="img" value="{{orders.img}}">
 
             <div>
-              <label for="firstname">First name:</label>
+              <label>First name:</label>
               <input type="text" name="firstname" required>
             </div>
 
             <div>
-              <label for="lastname">Last name:</label>
+              <label>Last name:</label>
               <input type="text" name="lastname" required>
             </div>
 
             <div>
-              <label for="email">Email:</label>
+              <label>Email:</label>
               <input type="email" name="email" required>
             </div>
 
@@ -69,6 +69,7 @@
           </fieldset>
         </form>
         <form action="/login-profile" method="POST">
+          <h3>Sign in with your account</h3>
           <fieldset>
             <input type="hidden" name="orderID" value="{{orders.orderID}}">
             <input type="hidden" name="productID" value="{{orders.productID}}">
@@ -83,7 +84,7 @@
             <input type="hidden" name="img" value="{{orders.img}}">
 
             <div>
-              <label for="customerID">Customer ID</label>
+              <label>Customer ID</label>
               <input type="text" name="customerID" required>
             </div>
 
@@ -94,28 +95,25 @@
 
     {{else}}
       <section>
-        <p>No products, go order your T-shirt <a href="/shop">here</a></p>      
-
-        
-        <h2>Sign in or register</h2>
-  
+        <p>No products, go order your T-shirt <a href="/shop">here</a></p>        
       </section>
 
       <section>
         <form action="/create-profile" method="POST">
+          <h2>Register</h2>
           <fieldset>
             <div>
-              <label for="">First name:</label>
+              <label>First name:</label>
               <input type="text" name="firstname" required>
             </div>
 
             <div>
-              <label for="">Last name:</label>
+              <label>Last name:</label>
               <input type="text" name="lastname" required>
             </div>
 
             <div>
-              <label for="">Email:</label>
+              <label>Email:</label>
               <input type="email" name="email" required>
             </div>
 
@@ -123,13 +121,11 @@
             <input type="submit" value="Register and order">
           </fieldset>
         </form>
-      </section>
-
-      <section>
         <form action="/login-profile" method="POST">
+          <h2>Sign in with your account</h2>
           <fieldset>
             <div>
-              <label for="">Customer ID</label>
+              <label>Customer ID</label>
               <input type="text" name="customerID" required>
             </div>
 

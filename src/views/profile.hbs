@@ -2,33 +2,46 @@
   {{> header}}
 
   <main>
-    <picture>
+    <section>
+      <picture>
         <source media="(min-width:650px)" srcset="{{customer.photo.normal}}">
         <img src="{{customer.photo.small}}" alt="">
-    </picture>
-    <h2>{{customer.firstname}}, {{customer.lastname}}</h2>
-    <h3>Mail: {{customer.email}}</h3>
-    <h4>ID: {{customer.id}}</h4>
+      </picture>
+      <aside>
+        <h2>{{customer.firstname}}, {{customer.lastname}}</h2>
+        <p>Mail: {{customer.email}}</p>
+        <p>ID: {{customer.id}}</p>
+      </aside>
+    </section>
 
     {{#if customer.orders}}
       {{#each customer.orders}}
         <section>
           <article>
             <img src="{{this.img}}" alt="">
-            <ul>
-              <li>{{this.color}}</li>  
-              <li>{{this.gender}}</li>  
-              <li>{{this.productID}}</li>  
-              <li>{{this.orderID}}</li>  
-              <li>{{this.size}}</li>  
-              <li>{{this.type}}</li>  
-              <li>{{this.print}}</li>  
-              <li>{{this.name}}</li>  
-              <li>{{this.customerID}}</li>
-            </ul>
+          </article>
+          <article>
+            <aside>
+              <h3>{{this.orderID}}</h3>
+              <h4>{{this.customerID}}</h4>
+              <ul>
+                <li>{{this.productID}}</li>  
+                <li>{{this.print}}</li>  
+                <li>{{this.size}}</li>  
+              </ul>
+            </aside>
+            <aside>
+              <ul>
+                <li>{{this.color}}</li>  
+                <li>{{this.gender}}</li>  
+                <li>{{this.type}}</li>  
+                <li>{{this.name}}</li>  
+              </ul>
+            </aside>
+           
           </article>
           
-          <article>
+          <div>
             <form action="/products/{{this.orderID}}" method="POST">
               <input type="hidden" name="orderID" value="{{this.orderID}}">
               <input type="hidden" name="customerID" value="{{this.customerID}}">
@@ -41,7 +54,7 @@
 
               <input type="submit" value="Delete">
             </form>
-          </article>
+          </div>
         </section>
       {{/each}}
     {{else}}
