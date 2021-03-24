@@ -12,15 +12,24 @@
 
     {{#if orders }}
       <section>
-        <img src="{{orders.img}}" alt="">
-        <p>Order ID: {{orders.orderID}}</p>
-        <p>Product ID: {{orders.productID}}</p>
-        <p>Name: {{orders.name}}</p>
-        <p>Type: {{orders.type}}</p>
-        <p>Price: {{orders.price}}</p>
-        <p>Size: {{orders.size}}</p>
-        <p>Printed text: {{orders.print}}</p>
-        <p>Color: {{orders.color}}</p>
+        <article>
+          <img src="{{orders.img}}" alt="">
+        </article>
+
+        <article>
+          <div>
+            <p>Order ID: {{orders.orderID}}</p>
+            <p>Product ID: {{orders.productID}}</p>
+            <p>Name: {{orders.name}}</p>
+            <p>Type: {{orders.type}}</p>
+          </div>
+          <div>
+            <p>Price: {{orders.price}}</p>
+            <p>Size: {{orders.size}}</p>
+            <p>Printed text: {{orders.print}}</p>
+            <p>Color: {{orders.color}}</p>
+          </div>
+        </article>
       </section>
 
       <h2>Sign in or register</h2>
@@ -41,27 +50,24 @@
             <input type="hidden" name="img" value="{{orders.img}}">
 
             <div>
-              <label for="">First name:</label>
-              <input type="text" name="firstname">
+              <label for="firstname">First name:</label>
+              <input type="text" name="firstname" required>
             </div>
 
             <div>
-              <label for="">Last name:</label>
-              <input type="text" name="lastname">
+              <label for="lastname">Last name:</label>
+              <input type="text" name="lastname" required>
             </div>
 
             <div>
-              <label for="">Email:</label>
-              <input type="text" name="email">
+              <label for="email">Email:</label>
+              <input type="email" name="email" required>
             </div>
 
 
             <input type="submit" value="Register and order">
           </fieldset>
         </form>
-      </section>
-
-      <section>
         <form action="/login-profile" method="POST">
           <fieldset>
             <input type="hidden" name="orderID" value="{{orders.orderID}}">
@@ -77,8 +83,8 @@
             <input type="hidden" name="img" value="{{orders.img}}">
 
             <div>
-              <label for="">Customer ID</label>
-              <input type="text" name="customerID">
+              <label for="customerID">Customer ID</label>
+              <input type="text" name="customerID" required>
             </div>
 
             <input type="submit" value="Log in and order">
@@ -100,17 +106,17 @@
           <fieldset>
             <div>
               <label for="">First name:</label>
-              <input type="text" name="firstname">
+              <input type="text" name="firstname" required>
             </div>
 
             <div>
               <label for="">Last name:</label>
-              <input type="text" name="lastname">
+              <input type="text" name="lastname" required>
             </div>
 
             <div>
               <label for="">Email:</label>
-              <input type="text" name="email">
+              <input type="email" name="email" required>
             </div>
 
 
@@ -124,7 +130,7 @@
           <fieldset>
             <div>
               <label for="">Customer ID</label>
-              <input type="text" name="customerID">
+              <input type="text" name="customerID" required>
             </div>
 
             <input type="submit" value="Log in and order">

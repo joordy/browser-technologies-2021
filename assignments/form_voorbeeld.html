@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulieren</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      label {
+        display: block;
+        margin: 1em 0;
+        position: relative;
+      }
+
+      input {
+        position: absolute;
+        left: 10em;
+      }
+
+      input:valid {
+        background: green;
+      }
+
+      input:invalid {
+        background: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <label
+        >Pure input
+        <input />
+      </label>
+
+      <label
+        >patten="[A-Z]"
+        <input pattern="[A-Z]" title="Alleen hoofdletters" />
+      </label>
+
+      <label
+        >Required
+        <input required title="verplicht" />
+      </label>
+
+      <label
+        >minlength=4
+        <input minlength="4" title="Minimaal 4 karakters" />
+      </label>
+
+      <label>
+        <input type="submit" />
+      </label>
+    </form>
+  </body>
+</html>
