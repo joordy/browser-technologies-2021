@@ -15,7 +15,7 @@
       </article>
       <article>
         <h2>{{product.name}}</h2>
-        <h3>{{product.price}}</h3>
+        <h3>€ {{product.price}}</h3>
 
         <form action="/cart" method="POST">
           <fieldset>
@@ -29,27 +29,31 @@
             <input type="hidden" name="img" value="{{product.image.small}}">
 
             <div>
-              <label for="color">Color</label>
+              <label for="color">
+                Color
                 <select name="color" id="color">
                   {{#each product.color }}
                     <option value="{{this}}">{{this}}</option>
                   {{/each}}
                 </select>
+                <span class="arrow"></span>
+              </label>
             </div>
             <div>
-              <label for="print">Print</label>
-              <input type="text" name="print" id="" required>
+              <label for="print">Print
+                <input type="text" name="print" id="" required>
+              </label>
             </div>
             <div>
-              <label for="size">Size</label>
-              <div id="select">
+              <label for="size">
+                Size
                 <select name="size" id="size">
                   {{#each product.sizes }}
                     <option value="{{this}}">{{this}}</option>
                   {{/each}}
                 </select>
-                <span></span>
-              </div>
+                <span class="arrow"></span>
+              </label>
             </div>
 
             <input type="submit" value="Add to cart">

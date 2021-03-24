@@ -113,6 +113,8 @@ Hosted application: [shirtdesigns.app](https://shirtdesigns.herokuapp.com/)
 To make APA:
 
 - https://koderplace.com/code-samples/255/how-to-change-the-location-of-views-in-express-handlebars
+- https://stackoverflow.com/questions/5449412/styling-input-buttons-for-ipad-and-iphone
+-
 
 ---
 
