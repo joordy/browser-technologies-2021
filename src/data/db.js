@@ -1,5 +1,5 @@
 let admin = require('firebase-admin')
-let serviceAccount = require('./connect.json')
+let serviceAccount = require('./DB_connect.json')
 require('dotenv').config()
 
 // const abc = process.env.PRIVATE_KEY

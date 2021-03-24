@@ -3,37 +3,29 @@
 
   <main>
     
-    {{#each products }}
-      <article>
-          <a href="/product/{{this.id}}">
-            {{#if this.image}}
+    <h2>All products:</h2>
+
+    <section>
+      {{#each products }}
+        <article>
+            <a href="/product/{{this.id}}">
               <div>
                 <picture>
-                    <img src="{{this.image.normal}}" alt="">
-                    <source media="(min-width:650px)" srcset="{{this.image}}">
-
-                  {{!-- {{#each this.image.normal[0]}}
-                    <source media="(min-width:650px)" srcset="{{this}}">
-                  {{/each}}
-                  {{#each this.image.small[0]}}
-                    <img src="{{this}}" alt="">
-                  {{/each}} --}}
-                </picture>
+                  <source media="(min-width:650px)" srcset="{{this.image.white}}">
+                  <img src="{{this.image.white_S}}" alt="">
+                </picture> 
                 <picture>
-                  {{!-- {{#each this.image.normal[1]}}
-                    <source media="(min-width:650px)" srcset="{{this}}">
-                  {{/each}}
-                  {{#each this.image.small[1]}}
-                    <img src="{{this}}" alt="">
-                  {{/each}} --}}
+                  <source media="(min-width:650px)" srcset="{{this.image.black}}">
+                  <img src="{{this.image.black_S}}" alt="">
                 </picture>
               </div>
-            {{/if}}
-            <h2>{{this.name}}</h2>
-            <h3>{{this.price}}</h3>
-          </a>
-        </article>  
-    {{/each}}
+              <h3>{{this.name}}</h3>
+              <h4>{{this.categorie}}</h4>
+              <h4>€ {{this.price}}</h4>
+            </a>
+          </article>  
+      {{/each}}
+    </section>
 
   </main>
 

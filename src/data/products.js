@@ -3,14 +3,10 @@ let products = [
   {
     id: 10001,
     image: {
-      small: [
-        'images/shirts/black_shirt_small.png',
-        'images/shirts/white_shirt_small.png',
-      ],
-      normal: [
-        'images/shirts/black_shirt.png',
-        'images/shirts/white_shirt.png',
-      ],
+      black_S: 'images/shirts/black_shirt_small.png',
+      black: 'images/shirts/black_shirt.png',
+      white_S: 'images/shirts/white_shirt_small.png',
+      white: 'images/shirts/white_shirt.png',
     },
     name: 'T-Shirt men',
     type: 'shirt',
@@ -44,14 +40,10 @@ let products = [
   {
     id: 10002,
     image: {
-      small: [
-        'images/shirts/black_shirt_small.png',
-        'images/shirts/white_shirt_small.png',
-      ],
-      normal: [
-        'images/shirts/black_shirt.png',
-        'images/shirts/white_shirt.png',
-      ],
+      black_S: 'images/shirts/black_shirt_small.png',
+      black: 'images/shirts/black_shirt.png',
+      white_S: 'images/shirts/white_shirt_small.png',
+      white: 'images/shirts/white_shirt.png',
     },
     name: 'T-Shirt woman',
     type: 'shirt',
@@ -85,14 +77,10 @@ let products = [
   {
     id: 10003,
     image: {
-      small: [
-        'images/sweaters/black_sweater_small.png',
-        'images/sweaters/white_sweater_small.png',
-      ],
-      normal: [
-        'images/sweaters/black_sweater.png',
-        'images/sweaters/white_sweater.png',
-      ],
+      black_S: 'images/sweaters/black_sweater_small.png',
+      black: 'images/sweaters/black_sweater.png',
+      white_S: 'images/sweaters/white_sweater_small.png',
+      white: 'images/sweaters/white_sweater.png',
     },
     name: 'Sweater men',
     type: 'sweater',
@@ -126,14 +114,10 @@ let products = [
   {
     id: 10004,
     image: {
-      small: [
-        'images/sweaters/black_sweater_small.png',
-        'images/sweaters/white_sweater_small.png',
-      ],
-      normal: [
-        'images/sweaters/black_sweater.png',
-        'images/sweaters/white_sweater.png',
-      ],
+      black_S: 'images/sweaters/black_sweater_small.png',
+      black: 'images/sweaters/black_sweater.png',
+      white_S: 'images/sweaters/white_sweater_small.png',
+      white: 'images/sweaters/white_sweater.png',
     },
     name: 'Sweater woman',
     type: 'sweater',
