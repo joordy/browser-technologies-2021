@@ -247,7 +247,7 @@ select:focus ~ span.arrow:after {
   background: rgb(202, 202, 202);
 }
 
-.productPage main section summary::-webkit-details-marker {
+.productPage main section summary::marker {
   color: transparent;
 }
 
