@@ -49,23 +49,23 @@
             <input type="hidden" name="color" value="{{orders.color}}">
             <input type="hidden" name="img" value="{{orders.img}}">
 
-            <div>
+            <fieldset>
               <label>First name:</label>
               <input type="text" name="firstname" required>
-            </div>
+            </fieldset>
 
-            <div>
+            <fieldset>
               <label>Last name:</label>
               <input type="text" name="lastname" required>
-            </div>
+            </fieldset>
 
-            <div>
+            <fieldset>
               <label>Email:</label>
               <input type="email" name="email" required>
-            </div>
+            </fieldset>
 
 
-            <input type="submit" value="Register and order">
+            <input type="submit" value="Register and add to account">
           </fieldset>
         </form>
         <form action="/login-profile" method="POST">
@@ -88,7 +88,7 @@
               <input type="text" name="customerID" required>
             </div>
 
-            <input type="submit" value="Log in and order">
+            <input type="submit" value="Log in and add to account">
           </fieldset>
         </form>
       </section>
@@ -140,6 +140,8 @@
   </main>
 
   {{> footer}}
+
+  <script src="js/script.js" defer></script>
 
 </body>
 
