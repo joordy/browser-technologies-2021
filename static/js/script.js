@@ -3,6 +3,9 @@ const init = () => {
     shirtColorPicker()
     liveInputField()
   }
+
+  if (window.localStorage) {
+  }
 }
 
 const shirtColorPicker = () => {
