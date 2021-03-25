@@ -4,7 +4,7 @@ const path = require('path')
 const expressHandlebars = require('express-handlebars')
 const router = require('./src/router/routes')
 const templates = path.join(__dirname, 'src/views')
-const port = process.env.PORT || 1010
+const port = process.env.PORT || 1111
 
 const hbs = expressHandlebars.create({
   defaultLayout: 'main',

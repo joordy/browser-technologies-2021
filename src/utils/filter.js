@@ -5,7 +5,7 @@ const filterByValue = (array, string) => {
 const checkColor = (input) => {
   const file = input.img.replace(
     `${input.img}`,
-    `images/${input.cat}/${input.color}_${input.type}_small.png`
+    `images/${input.cat}/${input.color}.png`
   )
   return file
 }

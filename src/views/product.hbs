@@ -4,14 +4,42 @@
   <main>
     <section>
       <article>
-        <picture>
-          <source media="(min-width:650px)" srcset="{{product.image.white}}">
-          <img src="{{product.image.white_S}}" alt="">
-        </picture> 
-        <picture>
+  
+        <picture id="shirtText" class="blackshirt shirts black"> 
           <source media="(min-width:650px)" srcset="{{product.image.black}}">
-          <img src="{{product.image.black_S}}" alt="">
+          <img src="{{product.image.black_s}}" alt="black shirt" >
         </picture>
+        <picture id="shirtText" class="blueshirt shirts blue">
+          <source media="(min-width:650px)" srcset="{{product.image.blue}}">
+          <img src="{{product.image.blue_s}}" alt="blue shirt">
+        </picture> 
+        <picture id="shirtText" class="bordeauxshirt shirts bordeaux"> 
+          <source media="(min-width:650px)" srcset="{{product.image.bordeaux}}">
+          <img src="{{product.image.bordeaux_s}}" alt="bordeaux shirt" >
+        </picture>
+        <picture id="shirtText" class="greenshirt shirts green">
+          <source media="(min-width:650px)" srcset="{{product.image.green}}">
+          <img src="{{product.image.green_s}}" alt="green shirt">
+        </picture> 
+        <picture id="shirtText" class="greyshirt shirts grey"> 
+          <source media="(min-width:650px)" srcset="{{product.image.grey}}">
+          <img src="{{product.image.grey_s}}" alt="grey shirt" >
+        </picture>
+           <picture id="shirtText" class="indigoshirt shirts indigo"> 
+          <source media="(min-width:650px)" srcset="{{product.image.indigo}}">
+          <img src="{{product.image.indigo_s}}" alt="indigo shirt" >
+        </picture>
+        <picture id="shirtText" class="pinkshirt shirts pink">
+          <source media="(min-width:650px)" srcset="{{product.image.pink}}">
+          <img src="{{product.image.pink_s}}" alt="pink shirt">
+        </picture> 
+        <picture id="shirtText" class="whiteshirt shirts white">
+          <source media="(min-width:650px)" srcset="{{product.image.white}}">
+          <img src="{{product.image.white_s}}" alt="white shirt">
+        </picture> 
+
+        <p id="textPrint"></p>
+
       </article>
       <article>
         <h2>{{product.name}}</h2>
@@ -28,23 +56,23 @@
             <input type="hidden" name="gender" value="{{product.gender}}">
             <input type="hidden" name="img" value="{{product.image.small}}">
 
-            <div>
+            <fieldset>
               <label for="color">
                 Color
-                <select name="color" id="color">
+                <select name="color" id="colorInput">
                   {{#each product.color }}
                     <option value="{{this}}">{{this}}</option>
                   {{/each}}
                 </select>
                 <span class="arrow"></span>
               </label>
-            </div>
-            <div>
+            </fieldset>
+            <fieldset>
               <label for="print">Print
-                <input type="text" name="print" id="" required>
+                <input type="text" name="print" id="printInput" required>
               </label>
-            </div>
-            <div>
+            </fieldset>
+            <fieldset>
               <label for="size">
                 Size
                 <select name="size" id="size">
@@ -54,7 +82,7 @@
                 </select>
                 <span class="arrow"></span>
               </label>
-            </div>
+            </fieldset>
 
             <input type="submit" value="Add to cart">
           </fieldset>
@@ -105,6 +133,7 @@
    
   </main>
   {{> footer}}
+  <script src="js/script.js" defer></script>
 
 </body>
 

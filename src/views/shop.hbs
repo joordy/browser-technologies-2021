@@ -7,29 +7,39 @@
 
     <section>
       {{#each products }}
-        <article>
-            <a href="/product/{{this.id}}">
+        <a href="/product/{{this.id}}">
+          <article>
               <div>
                 <picture>
                   <source media="(min-width:650px)" srcset="{{this.image.white}}">
-                  <img src="{{this.image.white_S}}" alt="">
+                  <img src="{{this.image.white_s}}" alt="">
                 </picture> 
                 <picture>
                   <source media="(min-width:650px)" srcset="{{this.image.black}}">
-                  <img src="{{this.image.black_S}}" alt="">
+                  <img src="{{this.image.black_s}}" alt="">
                 </picture>
               </div>
               <h3>{{this.name}}</h3>
               <h4>{{this.categorie}}</h4>
               <h4>€ {{this.price}}</h4>
-            </a>
-          </article>  
+
+              <button>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M28.5714 32H3.42857C1.53571 32 0 30.4643 0 28.5714V3.42857C0 1.53571 1.53571 0 3.42857 0H28.5714C30.4643 0 32 1.53571 32 3.42857V28.5714C32 30.4643 30.4643 32 28.5714 32ZM17.0071 10.4214L7.31429 20.1143L6.86429 24.1929C6.80714 24.7357 7.26429 25.2 7.81429 25.1429L11.8929 24.6929L21.5857 15C21.75 14.8357 21.75 14.5643 21.5857 14.3929L17.6214 10.4286C17.4429 10.2571 17.1714 10.2571 17.0071 10.4214ZM24.6429 9.50714L22.4929 7.35714C21.8214 6.68571 20.7357 6.68571 20.0714 7.35714L18.4214 9.00714C18.2571 9.17143 18.2571 9.44286 18.4214 9.61429L22.3857 13.5786C22.55 13.7429 22.8214 13.7429 22.9929 13.5786L24.6429 11.9286C25.3071 11.2643 25.3071 10.1786 24.6429 9.50714Z" fill="black"/>
+                </svg>
+
+              </button>
+              {{!-- <a href="/product/{{this.id}}">
+              </a> --}}
+            </article>  
+          </a>
       {{/each}}
     </section>
 
   </main>
 
   {{> footer}}
+  <script src="js/script.js" defer></script>
 
 </body>
 
