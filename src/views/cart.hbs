@@ -15,6 +15,7 @@
         <h2>Ordered products</h2>
         <aside>
           <img src="{{orders.img}}" alt="">
+          <p id="printedText" style="color: {{orders.printColor}};">{{orders.print}}</p>
         </aside>
 
         <aside>
@@ -28,6 +29,7 @@
             <p>Price: {{orders.price}}</p>
             <p>Size: {{orders.size}}</p>
             <p>Printed text: {{orders.print}}</p>
+            <p>Print color: {{orders.printColor}}</p>
             <p>Color: {{orders.color}}</p>
           </div>
         </aside>
@@ -50,17 +52,17 @@
             <input type="hidden" name="img" value="{{orders.img}}">
 
             <fieldset>
-              <label>First name:</label>
+              <legend>First name:</legend>
               <input type="text" name="firstname" required>
             </fieldset>
 
             <fieldset>
-              <label>Last name:</label>
+              <legend>Last name:</legend>
               <input type="text" name="lastname" required>
             </fieldset>
 
             <fieldset>
-              <label>Email:</label>
+              <legend>Email:</legend>
               <input type="email" name="email" required>
             </fieldset>
 
@@ -83,10 +85,10 @@
             <input type="hidden" name="color" value="{{orders.color}}">
             <input type="hidden" name="img" value="{{orders.img}}">
 
-            <div>
-              <label>Customer ID</label>
+            <fieldset>
+              <legend>Customer ID</legend>
               <input type="text" name="customerID" required>
-            </div>
+            </fieldset>
 
             <input type="submit" value="Log in and add to account">
           </fieldset>
@@ -103,17 +105,17 @@
           <h2>Register</h2>
           <fieldset>
             <fieldset>
-              <label>First name:</label>
+              <legend>First name:</legend>
               <input type="text" name="firstname" required>
             </fieldset>
 
             <fieldset>
-              <label>Last name:</label>
+              <legend>Last name:</legend>
               <input type="text" name="lastname" required>
             </fieldset>
 
             <fieldset>
-              <label>Email:</label>
+              <legend>Email:</legend>
               <input type="email" name="email" required>
             </fieldset>
 
@@ -125,7 +127,7 @@
           <h2>Sign in with your account</h2>
           <fieldset>
             <fieldset>
-              <label>Customer ID</label>
+              <legend>Customer ID</legend>
               <input type="text" name="customerID" required>
             </fieldset>
 

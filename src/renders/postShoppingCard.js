@@ -7,6 +7,7 @@ const database = admin.database()
 // toCart route function
 const postShoppingCard = async (req, res) => {
   try {
+    console.log(req.body)
     const order = {
       orderID: req.body.orderID,
       productID: req.body.productID,
@@ -17,6 +18,7 @@ const postShoppingCard = async (req, res) => {
       img: checkColor(req.body),
       color: req.body.color,
       print: req.body.print,
+      printColor: req.body.printColor,
       size: req.body.size,
     }
 
