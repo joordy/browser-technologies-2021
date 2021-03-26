@@ -19,7 +19,7 @@
             <input type="hidden" name="img" value="{{product.image.small}}">
 
             <fieldset>
-              <legend>Color</legend>
+              <label for="colorInput">Color</label>
               <select name="color" id="colorInput">
                 {{#each product.color }}
                   <option value="{{this}}">{{this}}</option>
@@ -29,24 +29,24 @@
             </fieldset>
 
             <fieldset>
-              <legend>Print</legend>
+              <label for="printInput">Print</label>
               <input type="text" name="print" id="printInput" required>
             </fieldset>
 
             <fieldset>
-              <legend>Color print</legend>
-              <label for="black">
-                <input type="radio" id="black" name="printColor" value="black" checked>
+              <label >Color print</label>
+              <label>
+                <input type="radio" name="printColor" value="black" >
                 Black
               </label>
-              <label for="white">
-                <input type="radio" id="white" name="printColor" value="white">
+              <label>
+                <input type="radio" name="printColor" value="white" checked>
                 White
               </label>
             </fieldset>
 
             <fieldset>
-              <legend>Size</legend>
+              <label for="size">Size</label>
               <select name="size" id="size">
                 {{#each product.sizes }}
                   <option value="{{this}}">{{this}}</option>
@@ -96,13 +96,13 @@
           </picture> 
         </div>
 
-        <p id="textPrint"></p>
+        <p id="textPrint" style="color: white;"></p>
 
       </article>
       <article>
         <h4>Product information</h4>
         <section>
-          <details> 
+       <details> 
             <summary>Product ID</summary>
             <p>{{product.id}}</p>
           </details>
@@ -132,9 +132,9 @@
           </details>
           <details> 
             <summary>Reviews</summary>
-            <!-- <p>{{product.reviews.one}}</p>
-            <p>{{product.reviews.two}}</p> -->
-          </details>
+             <p>{{product.reviews.one}}</p>
+            <p>{{product.reviews.two}}</p> 
+          </details> 
         </section>
 
       </article>
@@ -146,47 +146,3 @@
   <script src="js/script.js" defer></script>
 
 </body>
-
-            {{!-- <fieldset>
-              <label for="color">
-                Color
-                <select name="color" id="colorInput">
-                  {{#each product.color }}
-                    <option value="{{this}}">{{this}}</option>
-                  {{/each}}
-                </select>
-                <span class="arrow"></span>
-              </label>
-            </fieldset>
-            <fieldset>
-              <legend>Print</legend>
-
-              <label for="print">
-                <input type="text" name="print" id="printInput" required>
-              </label>
-            </fieldset>
-            <fieldset>
-              <legend>Color print</legend>
-              <label for="black">
-                <input type="radio" id="black" name="printColor" value="black">
-                Black
-              </label>
-              <label for="white">
-                <input type="radio" id="white" name="printColor" value="white">
-                White
-              </label>
-            </fieldset>
-            <fieldset>
-              <label for="size">
-                Size
-                <select name="size" id="size">
-                  {{#each product.sizes }}
-                    <option value="{{this}}">{{this}}</option>
-                  {{/each}}
-                </select>
-                <span class="arrow"></span>
-              </label>
-            </fieldset>
-
-            <input type="submit" value="Add to cart">
-          </fieldset> --}}
