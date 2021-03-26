@@ -8,7 +8,7 @@
         <img src="{{customer.photo.small}}" alt="">
       </picture>
       <aside>
-        <h2>{{customer.firstname}}, {{customer.lastname}}</h2>
+        <h2>Welcome {{customer.firstname}} {{customer.lastname}} !</h2>
         <p>Mail: {{customer.email}}</p>
         <p>ID: {{customer.id}}</p>
       </aside>
@@ -22,11 +22,10 @@
           </article>
           <article>
             <h3>{{this.orderID}}</h3>
-            <h4>{{this.customerID}}</h4>
             <aside>
               <ul>
                 <li>Product: {{this.productID}}</li>  
-                <li>Name:{{this.name}}</li>  
+                <li>Name: {{this.name}}</li>  
                 <li>Type: {{this.type}}</li>  
                 <li>Size: {{this.size}}</li>  
               </ul>
@@ -64,7 +63,8 @@
   </main>
 
   {{> footer}}
-  <script src="js/script.js" defer></script>
+
+  <script type='module' src="js/script.js" defer></script>
 
 </body>
 

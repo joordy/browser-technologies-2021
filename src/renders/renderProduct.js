@@ -7,7 +7,7 @@ const renderProduct = async (req, res) => {
   try {
     const id = req.url.replace('/product/', '')
     const data = filterByValue(products, id)
-    const uniqueID = uniqid('order_')
+    const uniqueID = uniqid.process()
 
     // console.log(data[0].image.small[0])
     console.log(data[0])
