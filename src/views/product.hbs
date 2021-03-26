@@ -36,11 +36,11 @@
             <fieldset>
               <label >Color print</label>
               <label>
-                <input type="radio" name="printColor" value="black" >
+                <input type="radio" class="printColor" name="printColor" value="black" checked >
                 Black
               </label>
               <label>
-                <input type="radio" name="printColor" value="white" checked>
+                <input type="radio" class="printColor" name="printColor" value="white">
                 White
               </label>
             </fieldset>
@@ -55,7 +55,7 @@
               <span class="arrow"></span>
             </fieldset>
 
-            <input type="submit" value="Add to cart">
+            <input type="submit" value="Add to cart" id="orderButton">
           </fieldset>
         </form>
 
@@ -64,35 +64,35 @@
         <div>
           <picture class="blackshirt shirts black"> 
             <source media="(min-width:650px)" srcset="{{product.image.black}}">
-            <img src="{{product.image.black_s}}" alt="black shirt" >
+            <img src="{{product.image.black_s}}" alt="black shirt" class="image">
           </picture>
           <picture class="blueshirt shirts blue">
             <source media="(min-width:650px)" srcset="{{product.image.blue}}">
-            <img src="{{product.image.blue_s}}" alt="blue shirt">
+            <img src="{{product.image.blue_s}}" alt="blue shirt" class="image">
           </picture> 
           <picture class="bordeauxshirt shirts bordeaux"> 
             <source media="(min-width:650px)" srcset="{{product.image.bordeaux}}">
-            <img src="{{product.image.bordeaux_s}}" alt="bordeaux shirt" >
+            <img src="{{product.image.bordeaux_s}}" alt="bordeaux shirt" class="image">
           </picture>
           <picture class="greenshirt shirts green">
             <source media="(min-width:650px)" srcset="{{product.image.green}}">
-            <img src="{{product.image.green_s}}" alt="green shirt">
+            <img src="{{product.image.green_s}}" alt="green shirt" class="image">
           </picture> 
           <picture class="greyshirt shirts grey"> 
             <source media="(min-width:650px)" srcset="{{product.image.grey}}">
-            <img src="{{product.image.grey_s}}" alt="grey shirt" >
+            <img src="{{product.image.grey_s}}" alt="grey shirt" class="image">
           </picture>
             <picture class="indigoshirt shirts indigo"> 
             <source media="(min-width:650px)" srcset="{{product.image.indigo}}">
-            <img src="{{product.image.indigo_s}}" alt="indigo shirt" >
+            <img src="{{product.image.indigo_s}}" alt="indigo shirt" class="image">
           </picture>
           <picture class="pinkshirt shirts pink">
             <source media="(min-width:650px)" srcset="{{product.image.pink}}">
-            <img src="{{product.image.pink_s}}" alt="pink shirt">
+            <img src="{{product.image.pink_s}}" alt="pink shirt" class="image">
           </picture> 
           <picture class="whiteshirt shirts white">
             <source media="(min-width:650px)" srcset="{{product.image.white}}">
-            <img src="{{product.image.white_s}}" alt="white shirt">
+            <img src="{{product.image.white_s}}" alt="white shirt" class="image">
           </picture> 
         </div>
 

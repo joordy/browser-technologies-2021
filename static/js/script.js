@@ -2,9 +2,7 @@ const init = () => {
   if (window.location.pathname.includes('/product/')) {
     shirtColorPicker()
     liveInputField()
-  }
-
-  if (window.localStorage) {
+    SaveToLocalStorage()
   }
 }
 
@@ -80,6 +78,10 @@ const liveInputField = () => {
     textPrint.style.color = 'white'
   })
 
+  const ShirtTypeWriter = () => {
+    textPrint.innerHTML = this.value
+  }
+
   printInput.onkeyup = function () {
     textPrint.innerHTML = this.value
   }
@@ -89,6 +91,49 @@ const changeColors = (shirts) => {
   shirts.forEach((item) => {
     item.style.display = 'none'
   })
+}
+
+const SaveToLocalStorage = () => {
+  if (window.localStorage != true) {
+    console.log('hallo')
+    const orderButton = document.querySelector('#orderButton')
+
+    if (orderButton != true) {
+      getOrderDetails()
+      orderButton.addEventListener('click', storeOrderDetails)
+    }
+  }
+}
+
+const storeOrderDetails = () => {
+  let color = document.querySelector('#colorInput').value
+  let print = document.querySelector('#printInput').value
+  let colorPrint = document.querySelector('input[type="radio"]:checked').value
+  let size = document.querySelector('#size').value
+
+  localStorage.setItem('ShirtColor', color)
+  localStorage.setItem('ShirtPrint', print)
+  localStorage.setItem('ShirtColorPrint', colorPrint)
+  localStorage.setItem('ShirtSize', size)
+}
+
+const getOrderDetails = () => {
+  let color = localStorage.getItem('ShirtColor')
+  let print = localStorage.getItem('ShirtPrint')
+  let colorPrint = localStorage.getItem('ShirtColorPrint')
+  let size = localStorage.getItem('ShirtSize')
+  document.querySelector('#colorInput').value = color
+  document.querySelector('#printInput').value = print
+  document.querySelector('#size').value = size
+  document.querySelector('#textPrint').innerHTML = print
+  document.querySelector('input[type="radio"]').removeAttribute('checked')
+  document
+    .querySelector(`input[value="${colorPrint}"]`)
+    .setAttribute('checked', '')
+  document.querySelector('.shirts').style.display = 'none'
+  document.querySelector(`.${color}`).style.display = 'block'
+  // document.querySelector(`.${color}`).style.marginRight = '0'
+  // document.querySelector('.image').style.width = '100%'
 }
 
 init()
