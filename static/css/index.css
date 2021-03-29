@@ -89,6 +89,9 @@ footer {
 
 /** Form elements, reusable **/
 
+form {
+  position: relative;
+}
 form fieldset {
   border: none;
 }
@@ -176,6 +179,20 @@ select:focus ~ span.arrow {
 
 select:focus ~ span.arrow:after {
   top: 6px;
+}
+
+form > #error,
+.error {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3.5rem;
+  z-index: 1;
+  background-color: red;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  visibility: hidden;
 }
 
 .show {

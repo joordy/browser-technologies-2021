@@ -24,7 +24,7 @@ let products = [
     type: 'shirt',
     categorie: 'shirts',
     gender: 'Male',
-    sizes: ['s', 'm', 'l', 'xl', 'xxl'],
+    sizes: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
     color: [
       'black',
       'blue',
@@ -82,7 +82,7 @@ let products = [
     type: 'shirt',
     categorie: 'shirts',
     gender: 'Woman',
-    sizes: ['xs', 's', 'm', 'l', 'xl'],
+    sizes: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
     color: [
       'black',
       'blue',
@@ -140,7 +140,7 @@ let products = [
     type: 'sweater',
     categorie: 'sweaters',
     gender: 'Male',
-    sizes: ['s', 'm', 'l', 'xl', 'xxl'],
+    sizes: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
     color: [
       'black',
       'blue',
@@ -198,7 +198,7 @@ let products = [
     type: 'sweater',
     categorie: 'sweaters',
     gender: 'Woman',
-    sizes: ['xs', 's', 'm', 'l', 'xl'],
+    sizes: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
     color: [
       'black',
       'blue',

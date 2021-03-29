@@ -36,7 +36,8 @@
       </section>
 
       <section>
-        <form action="/create-profile" method="POST">
+        <form action="/create-profile" method="POST" id="registerForm" name="registerForm">
+          <span id="lefterror" class="error"></span>
           <h3>Register</h3>
           <fieldset>
             <input type="hidden" name="orderID" value="{{orders.orderID}}">
@@ -70,7 +71,8 @@
             <input type="submit" value="Register and add to account">
           </fieldset>
         </form>
-        <form action="/login-profile" method="POST">
+        <form action="/login-profile" method="POST" id="loginForm" name="loginForm">
+          <span id="righterror" class="error"></span>
           <h3>Sign in with your account</h3>
           <fieldset>
             <input type="hidden" name="orderID" value="{{orders.orderID}}">
@@ -101,7 +103,8 @@
       </section>
 
       <section>
-        <form action="/create-profile" method="POST">
+        <form action="/create-profile" method="POST"  id="registerForm" name="registerForm">
+          <span id="lefterror" class="error"></span>
           <h2>Register</h2>
           <fieldset>
             <fieldset>
@@ -123,12 +126,13 @@
             <input type="submit" value="Register and order">
           </fieldset>
         </form>
-        <form action="/login-profile" method="POST">
+        <form action="/login-profile" method="POST"  id="loginForm" name="loginForm">
+          <span id="righterror" class="error"></span>
           <h2>Sign in with your account</h2>
           <fieldset>
             <fieldset>
               <legend>Customer ID</legend>
-              <input type="text" name="customerID" required>
+              <input type="text" name="customerID" id="customerID" required>
             </fieldset>
 
             <input type="submit" value="Log in and order">

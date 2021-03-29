@@ -6,8 +6,8 @@
       <article>
         <h2>{{product.name}}</h2>
         <h3>€ {{product.price}}</h3>
-
-        <form action="/cart" method="POST">
+        <form action="/cart" method="POST" id="form">
+          <span id="error"></span>
           <fieldset>
             <input type="hidden" name="orderID" value="{{uniqueID}}">
             <input type="hidden" name="productID" value="{{product.id}}">
@@ -36,7 +36,7 @@
             <fieldset>
               <label >Color print</label>
               <label>
-                <input type="radio" class="printColor" name="printColor" value="black" checked >
+                <input type="radio" class="printColor" name="printColor" value="black"  checked>
                 Black
               </label>
               <label>
