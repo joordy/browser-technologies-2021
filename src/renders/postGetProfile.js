@@ -7,8 +7,6 @@ const postGetProfile = async (req, res) => {
   try {
     if (req.body.orderID != undefined) {
       // When req.body is defined
-      console.log('defined')
-      console.log(req.body)
       database
         .ref(`/users/${req.body.customerID}`)
         .once('value')
@@ -38,6 +36,7 @@ const postGetProfile = async (req, res) => {
               const cleanedOrders = Object.keys(newOrderData).map(
                 (i) => newOrderData[i]
               )
+              console.log('data', data)
               res.render('profile', {
                 PageTitle: `Hi ${data.firstname}  | ShirtDesigns`,
                 customer: {
