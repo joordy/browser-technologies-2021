@@ -154,16 +154,18 @@ const placeDefault = () => {
 }
 
 const productFormValidator = () => {
-  const form = document.querySelector('#form')
+  document.forms['productCart']['print'].required = false
   const errorElement = document.getElementById('error')
-  const printInput = document.querySelector('#printInput')
-  printInput.required = false
-
-  form.addEventListener('submit', (e) => {
+  document.forms['productCart'].addEventListener('submit', (e) => {
     let errors = []
 
     if (printInput.value === '' || printInput.value == null) {
       errors.push('A print with more than 3 characters is required')
+      printInput.focus()
+    } else if (printInput.value.length < 3) {
+      errors.push(
+        `Your print is to short. Please fill in a print with minimal 3 characters`
+      )
       printInput.focus()
     }
 
@@ -177,6 +179,7 @@ const productFormValidator = () => {
 
 const cartFormValidator = () => {
   document.forms['loginForm']['customerID'].required = false
+  document.forms['registerForm'].noValidate = true
   document.forms['registerForm']['firstname'].required = false
   document.forms['registerForm']['lastname'].required = false
   document.forms['registerForm']['email'].required = false
@@ -187,10 +190,13 @@ const cartFormValidator = () => {
     let errors = []
 
     if (customerID.value === '' || customerID.value == null) {
-      errors.push('Please fill in a correct user ID.')
+      errors.push('Please fill in a valid user ID.')
       customerID.focus()
     } else if (customerID.value.length != 21) {
-      errors.push('The user ID is to short.')
+      errors.push('Your user ID is to short. Please fill in a valid user ID.')
+      customerID.focus()
+    } else if (customerID.value.includes('user_')) {
+      errors.push('Please fill in a valid user ID..')
       customerID.focus()
     }
 
@@ -198,6 +204,8 @@ const cartFormValidator = () => {
       e.preventDefault()
       errorElement.innerText = errors.join(', ')
       errorElement.style.visibility = 'visible'
+      errorElement.style.top = '200px'
+      errorElement.style.bottom = 'unset'
     }
   })
 
@@ -206,17 +214,37 @@ const cartFormValidator = () => {
     const lastName = document.forms['registerForm']['lastname']
     const email = document.forms['registerForm']['email']
     const errorElement = document.getElementById('lefterror')
+
     let errors = []
 
     if (firstName.value === '' || firstName.value == null) {
-      errors.push('Please fill in a first-name.')
+      errors.push(`Please fill in a first-name.`)
+      firstName.focus()
+    } else if (firstName.value.length < 3) {
+      errors.push(
+        `Your first-name is to short. Please fill in a name with minimal 3 characters`
+      )
       firstName.focus()
     } else if (lastName.value === '' || lastName.value == null) {
-      errors.push('Please fill in a last-name.')
+      errors.push(`Please fill in a last-name.`)
+      lastName.focus()
+    } else if (lastName.value.length < 3) {
+      errors.push(
+        `Your last-name is to short. Please fill in a name with minimal 3 characters`
+      )
       lastName.focus()
     } else if (email.value === '' || email.value == null) {
-      errors.push('Please fill in a correct E-mail adress.')
-      lastName.focus()
+      errors.push(`Please fill in a correct e-mail address.`)
+      email.focus()
+    } else if (!email.value.includes('@')) {
+      errors.push(`The submitted mail-address doesn't contain a '@'.`)
+      email.focus()
+    } else if (!email.value.includes('.')) {
+      errors.push(`The submitted mail-address doesn't contain a '.'.`)
+      email.focus()
+    } else if (!email.value.includes('.com') || !email.value.includes('.nl')) {
+      errors.push(`The submitted mail-address doesn't contain a valid domain.`)
+      email.focus()
     }
 
     if (errors.length > 0) {
