@@ -74,8 +74,6 @@ main {
 
 main > section {
   display: block;
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 footer {
@@ -299,10 +297,6 @@ span.error::after {
 }
 
 .productPage main section article:nth-child(2) {
-  /* order: -1; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   position: relative;
 }
 
@@ -352,40 +346,15 @@ span.error::after {
 .productPage main section article h3 {
   margin-bottom: 1rem;
 }
-.productPage main section summary {
-  padding: 1em;
-  border: 1px solid #121212;
-  border-radius: 4px;
-  transition: all 0.4s ease-in-out;
-  overflow: hidden;
+
+.productPage section article:nth-child(3) > section > article {
+  display: block;
+  width: 100%;
 }
 
-.productPage main section summary:hover {
-  background: rgb(202, 202, 202);
-}
-
-.productPage main section summary::marker {
-  color: transparent;
-}
-
-.productPage main section details[open] summary ~ * {
-  animation: sweep 0.2s ease-in-out;
-}
-
-.productPage main section details > * {
-  margin-left: 1.2rem;
-}
-.productPage main section details > summary {
-  margin: 0 0 1rem 0;
-}
-
-.productPage main section details ul li {
+.productPage section article:nth-child(3) > section > article ul {
   list-style-position: inside;
 }
-.productPage main section details[open] {
-  margin-bottom: 1rem;
-}
-
 @keyframes sweep {
   0% {
     opacity: 0;
@@ -398,47 +367,16 @@ span.error::after {
 }
 
 @media (min-width: 600px) {
-  .productPage section article:nth-child(1) {
-    /* width: 10%; */
-  }
-
-  .productPage section article:nth-child(2) {
-    /* width: calc(60% - 2rem); */
-    /* margin-right: 2rem; */
-  }
-
   .productPage main section h3,
   .productPage main section h4 {
     margin-bottom: 3rem;
   }
 }
 
-@supports (display: grid) {
-  .productPage main section {
-    /* grid-template-columns: 3fr 2fr; */
-  }
-
-  .productPage main section article {
-    /* width: unset; */
-    /* grid-column: 1/4; */
-  }
-
-  .productPage main section article:nth-child(3) {
-    /* grid-column: 1/4; */
-  }
-  @media (min-width: 600px) {
-    /* .productPage main section article {
-      grid-column: unset;
-    } */
-  }
-}
-
 /****************** CartPage ******************/
 
 .cartPage main section {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
+  margin-top: 4rem;
 }
 
 .cartPage main section h2 {
@@ -448,7 +386,6 @@ span.error::after {
 
 .cartPage main section aside {
   width: 100%;
-  /* width: calc(50% - 0.5rem); */
 }
 
 .cartPage main section aside:first-of-type {
@@ -460,17 +397,13 @@ span.error::after {
   transform: translateX(50%);
 }
 
-.cartPage main section:nth-child(2) {
-}
-
 .cartPage main section:nth-child(2) form {
-  /* width: calc(50% - 2rem); */
   width: 100%;
   margin-bottom: 3rem;
 }
 
 .cartPage main section:nth-child(2) form:first-of-type {
-  margin-right: 4rem;
+  /* margin-right: 4rem; */
 }
 .cartPage main section:nth-child(1) h2 {
   /* grid-column: 1/3; */
@@ -500,8 +433,6 @@ span.error::after {
 }
 
 .profilePage section:first-of-type {
-  /* display: flex; */
-  /* flex-direction: row; */
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
@@ -525,17 +456,8 @@ span.error::after {
   margin-bottom: 0.4rem;
 }
 
-.profilePage section {
-  /* flex-direction: column; */
-}
-
 .profilePage section article {
   width: 100%;
-}
-
-.profilePage section article:first-of-type {
-  /* display: flex; */
-  /* justify-content: center; */
 }
 
 .profilePage section article:first-of-type img {
@@ -556,45 +478,15 @@ span.error::after {
 
 .profilePage section div {
   width: 100%;
-  /* display: flex; */
-  /* justify-content: space-between; */
 }
 
 .profilePage section div form {
   width: 100%;
-  /* width: calc(50% - 1rem); */
 }
 
 .profilePage section div form:first-of-type {
   margin-right: 1rem;
 }
-/* .profilePage section article:last-of-type {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.profilePage section article:last-of-type h3,
-.profilePage section article:last-of-type h4 {
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-
-.profilePage section article:last-of-type aside ul {
-  list-style-position: inside;
-}
-.profilePage section div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.profilePage section div form {
-  width: calc(50% - 1rem);
-}
-
-.profilePage section div form:first-of-type {
-  margin-right: 1rem;
-} */
 
 @media (min-width: 600px) {
   .profilePage section:first-of-type picture {
@@ -603,9 +495,6 @@ span.error::after {
   .profilePage section:first-of-type aside {
     text-align: left;
     width: 70%;
-  }
-  .profilePage section {
-    /* flex-direction: row; */
   }
   .profilePage section article {
     margin: unset;
@@ -617,24 +506,12 @@ span.error::after {
   }
   .profilePage section article:last-of-type {
     max-width: unset;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
     width: calc(65% - 2rem);
     margin: 0 0 0 2rem;
   }
   .profilePage section article:last-of-type h3 {
     width: 100%;
   }
-  /* .profilePage section article:first-of-type picture {
-    width: 100%;
-  }
-  .profilePage section article:first-of-type img {
-    width: 100%;
-  } */
-  /* .profilePage section article:last-of-type {
-    width: calc(80% - 2rem);
-    margin-left: 2rem;
-  } */
   .profilePage section article:last-of-type aside {
     width: calc(50% - 0.5rem);
   }
@@ -698,19 +575,110 @@ span.error::after {
 
 @supports (display: flex) {
   main > section {
-    /* display: flex;
-    flex-wrap: wrap; */
-  }
-  /* main > section {
     display: flex;
     flex-wrap: wrap;
-  } */
+  }
+  .shopPage main a article div {
+    display: flex;
+  }
+  .productPage main section article:nth-child(2) {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartPage main section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .cartPage main section aside:nth-of-type(1) {
+    width: calc(100% - 12.5rem);
+    max-width: 30rem;
+  }
+  .cartPage main section aside:nth-of-type(2) {
+    width: 11.5rem;
+  }
+  .cartPage main section aside img {
+    width: 100%;
+    transform: unset;
+  }
+  .profilePage section:first-of-type {
+    display: flex;
+    flex-direction: row;
+  }
+  .profilePage section {
+    flex-direction: column;
+  }
+  .profilePage section:last-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid var(--darkBlue);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  @media (min-width: 450px) {
+    .profilePage section:last-of-type {
+      height: 300px;
+      flex-direction: row;
+    }
+    .profilePage section:last-of-type article {
+      width: calc(50% - 1rem);
+    }
+    .profilePage section:last-of-type article:first-of-type {
+      margin-right: 2rem;
+    }
+    .profilePage section:last-of-type article:first-of-type img {
+      height: 190px;
+      width: auto;
+      transform: translateX(25%);
+    }
+    .profilePage section:last-of-type article aside {
+      width: 100%;
+    }
+    .profilePage section div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .profilePage section div form {
+      width: calc(50% - 1rem);
+    }
+  }
+  @media (min-width: 600px) {
+    .productPage section article:nth-child(1) {
+      width: 40%;
+    }
+    .productPage section article:nth-child(2) {
+      width: calc(60% - 2rem);
+      margin-right: 2rem;
+    }
+    .cartPage main section:nth-child(2) {
+      display: flex;
+    }
+    .cartPage main section:nth-child(2) form {
+      width: calc(50% - 1rem);
+      margin-bottom: 3rem;
+    }
+    .cartPage main section:nth-child(2) form:first-of-type {
+      margin-right: 2rem;
+    }
+    .profilePage section article:last-of-type {
+      margin: 0;
+    }
+    .profilePage section:first-of-type aside {
+      width: 65%;
+      margin-left: 5%;
+    }
+  }
 }
 
 /******************** GRID SUPPORT ***********************/
 
 @supports (display: grid) {
-  /* main > section {
+  main > section {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
@@ -771,5 +739,5 @@ span.error::after {
     .cartPage main section:nth-child(2) {
       grid-template-columns: 1fr 1fr;
     }
-  } */
+  }
 }

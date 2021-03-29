@@ -42,13 +42,13 @@
           </article>
           
           <div>
-            <form action="/products/{{this.orderID}}" method="POST">
+            <form>
               <input type="hidden" name="orderID" value="{{this.orderID}}">
               <input type="hidden" name="customerID" value="{{this.customerID}}">
               <input type="submit" value="Edit">
             </form>
 
-            <form action="/profile/deleted-order" method="POST">
+            <form>
               <input type="hidden" name="orderID" value="{{this.orderID}}">
               <input type="hidden" name="customerID" value="{{this.customerID}}">
 
@@ -57,6 +57,11 @@
           </div>
         </section>
       {{/each}}
+
+      <form action="/order-successful" method="post">
+        <input type="hidden" name="customerID" value="customer.id">
+        <input type="submit" value="Order all items">
+      </form>
     {{else}}
       <p>You have no products ordered/saved yet.</p>
     {{/if}}
