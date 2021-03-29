@@ -154,6 +154,7 @@ const placeDefault = () => {
 }
 
 const productFormValidator = () => {
+  document.forms['productCart'].noValidate = true
   document.forms['productCart']['print'].required = false
   const errorElement = document.getElementById('error')
   document.forms['productCart'].addEventListener('submit', (e) => {
@@ -178,8 +179,9 @@ const productFormValidator = () => {
 }
 
 const cartFormValidator = () => {
-  document.forms['loginForm']['customerID'].required = false
+  document.forms['loginForm'].noValidate = true
   document.forms['registerForm'].noValidate = true
+  document.forms['loginForm']['customerID'].required = false
   document.forms['registerForm']['firstname'].required = false
   document.forms['registerForm']['lastname'].required = false
   document.forms['registerForm']['email'].required = false
@@ -242,7 +244,8 @@ const cartFormValidator = () => {
     } else if (!email.value.includes('.')) {
       errors.push(`The submitted mail-address doesn't contain a '.'.`)
       email.focus()
-    } else if (!email.value.includes('.com') || !email.value.includes('.nl')) {
+    } else if (!email.value.includes('com')) {
+      console.log(email.value.includes('com'))
       errors.push(`The submitted mail-address doesn't contain a valid domain.`)
       email.focus()
     }
