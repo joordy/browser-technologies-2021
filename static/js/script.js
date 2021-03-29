@@ -100,6 +100,7 @@ const SaveToLocalStorage = () => {
 
     if (orderButton != true) {
       getOrderDetails()
+
       orderButton.addEventListener('click', storeOrderDetails)
     }
   }
@@ -127,11 +128,9 @@ const getOrderDetails = () => {
   document.querySelector('#size').value = size
   document.querySelector('#textPrint').innerHTML = print
   document.querySelector('input[type="radio"]').removeAttribute('checked')
-  document
-    .querySelector(`input[value="${colorPrint}"]`)
-    .setAttribute('checked', '')
-  document.querySelector('.shirts').style.display = 'none'
-  document.querySelector(`.${color}`).style.display = 'block'
+  document.querySelector(`input[value="${colorPrint}"]`)
+  // document.querySelector('.shirts').style.display = 'none'
+  // document.querySelector(`.${color}`).style.display = 'block'
   // document.querySelector(`.${color}`).style.marginRight = '0'
   // document.querySelector('.image').style.width = '100%'
 }
