@@ -55,7 +55,7 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 ### **Browsers**
 
 - Brave browser (MacOS)
-- Firefox (MacOS)
+- Safari (MacOS)
 - Safari (iOS)
 - Chrome (Android emulator)
 
