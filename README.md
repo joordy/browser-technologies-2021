@@ -61,16 +61,13 @@ I want to be able to design my own t-shirt with nerdy text, save it, order it, a
 
 ### **Web technology**
 
-- Vibration
-- Screen orientation?
 - No images
 - No mouse
 
 ### **Web API's**
 
 - Storage API [link](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API)
-- Touch events [link](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
-- Validity [link](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
+<!-- - Validity [link](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation) -->
 
 ---
 

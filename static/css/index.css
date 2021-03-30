@@ -28,6 +28,22 @@ a {
   color: var(--softBlack);
   text-decoration: none;
 }
+a:focus {
+  background-color: #e7e7e7;
+  padding: 0.25rem 0.5rem;
+  color: var(--darkBlue);
+}
+button:focus {
+  background-color: #506fba;
+}
+
+input[type='submit']:focus {
+  background-color: #506fba;
+}
+/* 
+input:focus {
+
+} */
 
 header {
   position: fixed;
