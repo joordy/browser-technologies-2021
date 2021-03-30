@@ -194,10 +194,12 @@ const cartFormValidator = () => {
     if (customerID.value === '' || customerID.value == null) {
       errors.push('Please fill in a valid user ID.')
       customerID.focus()
-    } else if (customerID.value.length != 21) {
-      errors.push('Your user ID is to short. Please fill in a valid user ID.')
-      customerID.focus()
-    } else if (customerID.value.includes('user_')) {
+    }
+    // else if (customerID.value.length <= 21) {
+    //   errors.push('Your user ID is to short. Please fill in a valid user ID.')
+    //   customerID.focus()
+    // }
+    else if (customerID.value.includes('user_')) {
       errors.push('Please fill in a valid user ID..')
       customerID.focus()
     }
@@ -246,7 +248,9 @@ const cartFormValidator = () => {
       email.focus()
     } else if (!email.value.includes('com')) {
       console.log(email.value.includes('com'))
-      errors.push(`The submitted mail-address doesn't contain a valid domain.`)
+      errors.push(
+        `The submitted mail-address doesn't contain a valid domain. Your domain should end with .com.`
+      )
       email.focus()
     }
 
