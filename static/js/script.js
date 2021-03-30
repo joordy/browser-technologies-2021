@@ -248,7 +248,9 @@ const cartFormValidator = () => {
       email.focus()
     } else if (!email.value.includes('com')) {
       console.log(email.value.includes('com'))
-      errors.push(`The submitted mail-address doesn't contain a valid domain.`)
+      errors.push(
+        `The submitted mail-address doesn't contain a valid domain. Your domain should end with .com.`
+      )
       email.focus()
     }
 
