@@ -195,11 +195,10 @@ const cartFormValidator = () => {
     const customerID = document.forms['loginForm']['customerID']
     const errorElement = document.getElementById('righterror')
     let errors = []
-
     if (customerID.value === '' || customerID.value == null) {
       errors.push('Please fill in a valid user ID.')
       customerID.focus()
-    } else if (customerID.value.length <= 20) {
+    } else if (customerID.value.length != 20) {
       errors.push('Your user ID is to short. Please fill in a valid user ID.')
       customerID.focus()
     } else if (!customerID.value.includes('user_')) {

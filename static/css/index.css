@@ -19,6 +19,11 @@ body {
   font-family: Inter;
 }
 
+button,
+a,
+input {
+  cursor: pointer;
+}
 a {
   color: var(--softBlack);
   text-decoration: none;
