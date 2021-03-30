@@ -125,6 +125,11 @@ const storeOrderDetails = () => {
   let colorPrint = document.querySelector('input[type="radio"]:checked').value
   let size = document.querySelector('#size').value
 
+  localStorage.setItem('ShirtColor', {
+    color: '#ffffff',
+    print: 'abc weg er mee',
+  })
+
   localStorage.setItem('ShirtColor', color)
   localStorage.setItem('ShirtPrint', print)
   localStorage.setItem('ShirtColorPrint', colorPrint)
@@ -194,12 +199,10 @@ const cartFormValidator = () => {
     if (customerID.value === '' || customerID.value == null) {
       errors.push('Please fill in a valid user ID.')
       customerID.focus()
-    }
-    // else if (customerID.value.length <= 21) {
-    //   errors.push('Your user ID is to short. Please fill in a valid user ID.')
-    //   customerID.focus()
-    // }
-    else if (customerID.value.includes('user_')) {
+    } else if (customerID.value.length <= 20) {
+      errors.push('Your user ID is to short. Please fill in a valid user ID.')
+      customerID.focus()
+    } else if (!customerID.value.includes('user_')) {
       errors.push('Please fill in a valid user ID..')
       customerID.focus()
     }
