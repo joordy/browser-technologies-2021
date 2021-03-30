@@ -40,10 +40,10 @@ button:focus {
 input[type='submit']:focus {
   background-color: #506fba;
 }
-/* 
-input:focus {
 
-} */
+input[type='submit']:disabled {
+  background-color: #b5c6f0;
+}
 
 header {
   position: fixed;
