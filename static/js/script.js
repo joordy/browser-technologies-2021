@@ -12,6 +12,7 @@ const init = () => {
   } else if (cartPage && document.querySelector) {
     // const cartform = document.querySelector('#form')
     cartFormValidator(form)
+    clearLocalStorage()
   }
 }
 
@@ -144,12 +145,13 @@ const getOrderDetails = () => {
   document.querySelector('#colorInput').value = color
   document.querySelector('#printInput').value = print
   document.querySelector('#size').value = size
-  document.querySelector('#textPrint').innerHTML = print
+  document.querySelector('#textPrint').innerHTML = colorPrint
   document.querySelector('input[type="radio"]').removeAttribute('checked')
   document.querySelector(`input[value="${colorPrint}"]`).checked = true
   document.querySelector('.shirts').style.display = 'none'
   document.querySelector(`.${color}`).style.display = 'block'
   document.querySelector(`.${color}`).style.maxWidth = 'unset'
+  document.querySelector('#textPrint').style.color = colorPrint
 }
 
 const placeDefault = () => {
@@ -195,10 +197,12 @@ const cartFormValidator = () => {
     const customerID = document.forms['loginForm']['customerID']
     const errorElement = document.getElementById('righterror')
     let errors = []
+    const test = 'user_sktwi3bokmvzobyz'
+    console.log(test.length)
     if (customerID.value === '' || customerID.value == null) {
       errors.push('Please fill in a valid user ID.')
       customerID.focus()
-    } else if (customerID.value.length != 20) {
+    } else if (!customerID.value.length == 21) {
       errors.push('Your user ID is to short. Please fill in a valid user ID.')
       customerID.focus()
     } else if (!customerID.value.includes('user_')) {
@@ -210,7 +214,7 @@ const cartFormValidator = () => {
       e.preventDefault()
       errorElement.innerText = errors.join(', ')
       errorElement.style.visibility = 'visible'
-      errorElement.style.top = '200px'
+      errorElement.style.top = '250px'
       errorElement.style.bottom = 'unset'
     }
   })
@@ -262,6 +266,16 @@ const cartFormValidator = () => {
       errorElement.style.visibility = 'visible'
     }
   })
+}
+
+const clearLocalStorage = () => {
+  const buttons = document.querySelectorAll('#submitOrder')
+
+  buttons.forEach((button) =>
+    button.addEventListener('click', (e) => {
+      localStorage.clear()
+    })
+  )
 }
 
 init()

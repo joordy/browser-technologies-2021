@@ -66,7 +66,7 @@
             </fieldset>
 
 
-            <input type="submit" value="Register and add to account">
+            <input type="submit" value="Register and add to account" id="submitOrder">
           </fieldset>
         </form>
         <form action="/login-profile" method="POST" id="loginForm" name="loginForm">
@@ -88,7 +88,7 @@
             <fieldset>
               <label for="customerID">
                 Customer ID
-                <input type="text" name="customerID" id="customerID" required>
+                <input type="text" name="customerID" id="submitOrder" required>
               </label>
               
             </fieldset>
@@ -100,13 +100,15 @@
 
     {{else}}
       <section>
-        <p>No products, go order your T-shirt <a href="/shop">here</a></p>        
+        <h2>You don't have designed any products yet. Please log-in to view your current orders, or register for a new account.</h2>
+
+        <p>No products, go order your T-shirt <a style="color: blue;" href="/shop">here</a></p>        
       </section>
 
       <section>
         <form action="/create-profile" method="POST"  id="registerForm" name="registerForm">
           <span id="lefterror" class="error"></span>
-          <h2>Register</h2>
+          <h3>Register</h3>
           <fieldset>
             <fieldset>
               <label>
@@ -135,7 +137,7 @@
         </form>
         <form action="/login-profile" method="POST"  id="loginForm" name="loginForm">
           <span id="righterror" class="error"></span>
-          <h2>Sign in with your account</h2>
+          <h3>Sign in with your account</h3>
           <fieldset>
             <fieldset>
               <label>
