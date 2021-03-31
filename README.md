@@ -6,22 +6,7 @@ For the final assignment it is important to develop an interactive application a
 
 ### **Nerdy T-Shirt**
 
-I want to be able to design my own t-shirt with nerdy text, save it, order it, and use it next time I visit the site.
-
-<details style="margin: 1em 0;">
-  <summary style="margin: 1em 0;">Criteria</summary>
-
-- Data maker (name, telephone or email)
-- Color t-shirt
-- Text t-shirt
-- Size t-shirt
-- M / F
-- Pick up where you left off / revise design
-- Validation: everything must be completed. Provide clear error messages
-- User must be able to create and revise multiple t-shirts, so must have an overview page.
-- Order page to buy a design and have it made
-
-</details>
+I want to be able to design my own t-shirt with nerdy text, save it, order it, and use it next time I visit the site. [_criteria_](https://github.com/cmda-minor-web/browser-technologies-2021/blob/master/course/Usecase-t-nerdy-shirt.md)
 
 ## 🌐 **Live link**
 
@@ -35,38 +20,29 @@ Live application: [shirtdesigns.app](https://shirtdesigns.herokuapp.com/)
 - Chrome (on Samsung A50)
 - Default Samsung Browser (on Samsung A50)
 
-## **Feature detection**
+## 🚀 **Progressive Enhancements**
 
-### **CSS Feature detection**
+Progressive Enhancement is a way of building websites and web-applications. It is based on the theory that your page should work with just the basic layer, before adding any other layers. The HTML layer will be rock-solid, and will still work if any of the enhancements doesn't load or aren't supported.
 
-In CSS you can use feature detection with the `@supports` syntax. By using this syntax you can ensure that you only use specific CSS code for browsers that support this. Consider, for example, a grid layout or flex-box. These are also the use cases I used the `@ supports` syntax for.
+### **Enhancements**
 
-The piece of code below clearly shows how this is used. When display grid is not supported, the main has a 'block' layout. If grid is supported by the browsers, a two column layout is created.
+#### **Live form input**
 
-```css
-main {
-  display: block;
-}
+As a JavaScript enhancement I added a live form input, which means that the text that the user passes on, what they want on the shirt, is shown on the shirt in real time. This gives you as a user an idea of what the product will look like.
 
-@supports (display: grid) {
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-```
+#### **Changing shirts**
 
-### **JS Feature detection**
+When the user has chosen a specific color for his or her t-shirt, it is immediately displayed to the user using JavaScript. This makes it immediately clear what color the user has chosen.
 
-In JavaScript you can use an if statement. By means of the if statement you can see if the element you want to use, such as localStorage, fetch, or something else, is supported in the browser. If not supported, this code will not be executed.
+#### **Custom form validation**
 
-```js
-if (window.localStorage) {
-  localStorage.setItem('test', 'yes, localStorage exists')
-}
-```
+By disabling the standard form validation of HTML with javascript, and writing his own patterns for this, the user is obliged to write specific information in the input fields. For example, a name must match at least 2 characters, and an e-mail address must contain a '@' and '.'.
 
-## **Layers**
+#### **Local Storage API**
+
+With the help of local storage, it is possible for the user to, once they have designed a shirt and sent it to the confirmation page, all information is stored in the local storage, so that they can come back here at a later time. to continue working with them. The local storage is emptied when the shirts are ordered.
+
+### **Layers**
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0; font-weight: 700;">Functional</summary>
@@ -107,41 +83,166 @@ The pleasurable layer contains functions that aren't necessary, but fun to use f
 
 </details>
 
-## 🚀 **Enhancements**
+## **Feature detection**
 
-### **Live form input**
+### **CSS Feature detection**
 
-lorem
+In CSS you can use feature detection with the `@supports` syntax. By using this syntax you can ensure that you only use specific CSS code for browsers that support this. Consider, for example, a grid layout or flex-box. These are also the use cases I used the `@ supports` syntax for.
 
-### **Changing shirts**
+The piece of code below clearly shows how this is used. When display grid is not supported, the main has a 'block' layout. If grid is supported by the browsers, a two column layout is created.
 
-lorem
+```css
+main {
+  display: block;
+}
 
-### **Custom form validation**
+@supports (display: grid) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+```
 
-lorem
+### **JS Feature detection**
 
-### **Local Storage API**
+In JavaScript you can use an if statement. By means of the if statement you can see if the element you want to use, such as localStorage, fetch, or something else, is supported in the browser. If not supported, this code will not be executed.
 
-lorem
+```js
+if (window.localStorage) {
+  localStorage.setItem('test', 'yes, localStorage exists')
+}
+```
 
-## **Wireflow**
+## **Test rapport**
+
+The tests are done with the Lambdatest tool, all based on the same screen resolution (1440x900) and device (Macbook Pro 2019 — 15 inch).
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0; font-weight: 700;">Wireflow</summary>
+  <summary style="margin: 1em 0; font-weight: 700;">Internet Explorer — V11.0 — Windows</summary>
 
-![frames](https://user-images.githubusercontent.com/48051912/112219775-bf886e00-8c25-11eb-8b61-45294b77576f.png)
+Based on the test results (see screenshots below) I can conclude that my app is somewhat workable for Internet Explorer, but especially the menu here is difficult.
+
+![Internet Explorer — V11.0 — Windows](https://user-images.githubusercontent.com/48051912/113212430-081fd700-9277-11eb-91a1-92875e6a3123.png)
 
 </details>
 
-### **Basic sketches**
-
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0; font-weight: 700;">Basic sketches</summary>
+  <summary style="margin: 1em 0; font-weight: 700;">Safari — V11.0 — Mac OS</summary>
+  
+  This older version of Safari has a good support. It works exactly the same as the newest version (currently: 14.0). Only difference is the Pixel Per Inch, which is higher on the new version (based on same screen resolution).
 
-![IMG_0716](https://user-images.githubusercontent.com/48051912/111471911-b54c0880-8729-11eb-93fd-daf6b4a49948.jpg)
+![saf11](https://user-images.githubusercontent.com/48051912/113212547-33a2c180-9277-11eb-91ba-c1799e2e7820.png)
 
 </details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Safari — V14.0 — Mac OS</summary>
+  
+During the developing process I've mainly worked with this browser (Safari) and Brave, so I'm not surprised with the looks of the application. All the functionalities work properly, and there isn't a small bug that doesn't work with this browser.
+
+![saf14](https://user-images.githubusercontent.com/48051912/113212557-37cedf00-9277-11eb-89c7-bf2a7aeb535d.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Firefox — V80 — Windows 10</summary>
+
+On the slightly older version of FireFox the application still works fine. Only has it the same problem as Safari V11.0, the Pixel Per Inch seems higher on newer versions, the user will see more content on newer versions of the browser.
+
+![firefox](https://user-images.githubusercontent.com/48051912/113215647-78305c00-927b-11eb-989e-1153e2a73772.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Brave (Chromium) — V89 — Mac OS</summary>
+
+During the developing process I've mainly worked with this browser (Brave) and Safari, so I'm not surprised with the looks of the application. All the functionalities work properly, and there isn't a small bug that doesn't work with this browser.
+
+![Brave](https://user-images.githubusercontent.com/48051912/113215513-3d2e2880-927b-11eb-8bef-72a73e7e4a30.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Chrome — V79 — Windows 10</summary>
+
+On older versions of chrome is the support still decent. Unthought the select boxes has a fixed with, this version of Chrome doesn't recognize it. Further, the application works properly.
+
+![Chrome 79](https://user-images.githubusercontent.com/48051912/113215517-3e5f5580-927b-11eb-9c33-47e2e055fb7e.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Opera 75 — beta  — Mac OS</summary>
+  
+  The newest Opera version (which is currently is available as BETA) works fine with my application. It has the same results as every chromium, firefox or safari browser. Only the Pixels Per Inch is an issue here.
+
+![Opera beta](https://user-images.githubusercontent.com/48051912/113215504-3a333800-927b-11eb-8f06-19f15232d01f.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Opera 66 — V66  — Windows 10</summary>
+  
+  This version of Opera has the same problem as the older chrome browsers, unthought a defined with of the select boxes, the browser doesn't recognize it and puts an default value here.
+
+![Opera 66](https://user-images.githubusercontent.com/48051912/113215490-369fb100-927b-11eb-99fe-56f30e5f4a85.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Safari — iOS 14.4 — iPhone 12 Pro Max </summary>
+  
+  The Safari browser seems to work perfectly on the newest iPhone devices. There are no errors or mistakes to be found here.
+
+![iphone](https://user-images.githubusercontent.com/48051912/113216002-0278c000-927c-11eb-8985-9fc1e5d2725d.png)
+
+</details>
+
+<details style="margin: 1em 0;">
+  <summary style="margin: 1em 0; font-weight: 700;">Chrome — Android 11 — Samsung A51 </summary>
+
+The Chrome browser of this android device seems to work exactly the same as the Safari browser on iOS. There aren't any mistakes to be found here.
+
+![android chrome](https://user-images.githubusercontent.com/48051912/113215503-399aa180-927b-11eb-9e78-2c360dff7917.png)
+
+</details>
+
+## **Sketches**
+
+Before I started coding, I made a sketch in which the flow of the user should be clear. Based on this I developed my final product.
+
+  <details style="margin: 1em 0;">
+    <summary style="margin: 1em 0; font-weight: 700;">Basic sketches</summary>
+  
+  ![IMG_0716](https://user-images.githubusercontent.com/48051912/111471911-b54c0880-8729-11eb-93fd-daf6b4a49948.jpg)
+  
+  </details>
+  
+  ## **Wireframes**
+  
+  The Wireframes are based on the three layers of Progressive Enhancement. The first layer only contains HTML. The second layer consists of HTML & CSS. In the third layer it will be a combination of HTML, CSS & JS.
+  
+  <details style="margin: 1em 0;">
+    <summary style="margin: 1em 0; font-weight: 700;">HTML</summary>
+  
+  ![Nerdy T-Shirt HTML Wireframes](https://user-images.githubusercontent.com/48051912/113209748-b9bd0900-9273-11eb-9887-c325f1e4004a.png)
+  
+  </details>
+  
+  <details style="margin: 1em 0;">
+    <summary style="margin: 1em 0; font-weight: 700;">HTML CSS</summary>
+  
+  ![Nerdy T-Shirt HTML CSS Wireframes](https://user-images.githubusercontent.com/48051912/113209395-503cfa80-9273-11eb-9abc-4c1cab855f84.png)
+  
+  </details>
+  
+  <details style="margin: 1em 0;">
+    <summary style="margin: 1em 0; font-weight: 700;">HTML CSS JS</summary>
+  
+  ![Nerdy T-Shirt HTML CSS JS Wireframes](https://user-images.githubusercontent.com/48051912/113208782-7d3cdd80-9272-11eb-86d7-cd784a7f3f09.png)
+  
+  </details>
 
 ## 💻 **Installation**
 
