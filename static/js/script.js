@@ -9,13 +9,14 @@ const init = () => {
     liveInputField()
     SaveToLocalStorage()
     productFormValidator(errorElement)
+    removeArrows()
   } else if (cartPage && document.querySelector) {
-    // const cartform = document.querySelector('#form')
     cartFormValidator(form)
     clearLocalStorage()
   }
 }
 
+// Function to get the correct t-shirt when choosing a color
 const shirtColorPicker = () => {
   let colorValue = document.querySelector('#colorInput')
   const shirts = document.querySelectorAll('.shirts')
@@ -39,39 +40,11 @@ const shirtColorPicker = () => {
         selectedShirt.style.maxWidth = '100%'
         selectedShirt.style.margin = '0'
         selectedShirt.childNodes[3].style.width = '100%'
-      // break
-      // case 'blue':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
-      // case 'bordeaux':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
-      // case 'green':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
-      // case 'grey':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
-      // case 'indigo':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
-      // case 'pink':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
-      // case 'white':
-      //   changeColors(shirts)
-      //   selectedShirt.style.display = 'block'
-      //   break
     }
   })
 }
 
+// Function for live input on the t-shirt
 const liveInputField = () => {
   const printInput = document.querySelector('#printInput')
   const textPrint = document.querySelector('#textPrint')
@@ -97,12 +70,14 @@ const liveInputField = () => {
   }
 }
 
+// Function to hide every t-shirt you didn't choose
 const changeColors = (shirts) => {
   shirts.forEach((item) => {
     item.style.display = 'none'
   })
 }
 
+// Function with event to launch when pressing, fire other localStorage functions
 const SaveToLocalStorage = () => {
   if (window.localStorage) {
     let orderButton = document.querySelector('#orderButton')
@@ -112,14 +87,7 @@ const SaveToLocalStorage = () => {
   }
 }
 
-const checkIfLocalIsDefined = () => {
-  if (localStorage.getItem('ShirtColor') === null) {
-    placeDefault()
-  } else {
-    getOrderDetails()
-  }
-}
-
+// Function to store all the details in localStorage
 const storeOrderDetails = () => {
   let color = document.querySelector('#colorInput').value
   let print = document.querySelector('#printInput').value
@@ -137,6 +105,16 @@ const storeOrderDetails = () => {
   localStorage.setItem('ShirtSize', size)
 }
 
+// Function to check if localStorage value is defined
+const checkIfLocalIsDefined = () => {
+  if (localStorage.getItem('ShirtColor') === null) {
+    placeDefault()
+  } else {
+    getOrderDetails()
+  }
+}
+
+// Function to get all the information from localStorage
 const getOrderDetails = () => {
   let color = localStorage.getItem('ShirtColor')
   let print = localStorage.getItem('ShirtPrint')
@@ -154,12 +132,14 @@ const getOrderDetails = () => {
   document.querySelector('#textPrint').style.color = colorPrint
 }
 
+// Function to place the localStorage values in html
 const placeDefault = () => {
   document.querySelector('#colorInput').value = 'black'
   document.querySelector(`input[value="white"]`).checked = true
   document.querySelector('#size').value = 'm'
 }
 
+// Function for form-validator in product-page
 const productFormValidator = () => {
   document.forms['productCart'].noValidate = true
   document.forms['productCart']['print'].required = false
@@ -185,6 +165,7 @@ const productFormValidator = () => {
   })
 }
 
+// Function for cart-validator in product-page
 const cartFormValidator = () => {
   document.forms['loginForm'].noValidate = true
   document.forms['registerForm'].noValidate = true
@@ -268,6 +249,7 @@ const cartFormValidator = () => {
   })
 }
 
+// Function for removing localStorage when order is placed
 const clearLocalStorage = () => {
   const buttons = document.querySelectorAll('#submitOrder')
 
@@ -276,6 +258,14 @@ const clearLocalStorage = () => {
       localStorage.clear()
     })
   )
+}
+
+// function to remove arrows which are useless with javascript.
+const removeArrows = () => {
+  const arrowsright = document.querySelector('.toright')
+  const arrowsleft = document.querySelector('.toleft')
+  arrowsright.remove()
+  arrowsleft.remove()
 }
 
 init()
