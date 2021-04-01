@@ -18,7 +18,7 @@ const init = () => {
 
 // Function to get the correct t-shirt when choosing a color
 const shirtColorPicker = () => {
-  let colorValue = document.querySelector('#colorInput')
+  const colorValue = document.querySelector('#colorInput')
   const shirts = document.querySelectorAll('.shirts')
   const selectedShirt = document.querySelector(`.${colorValue.value}`)
 
@@ -30,17 +30,28 @@ const shirtColorPicker = () => {
     selectedShirt.childNodes[3].style.width = '100%'
   }
 
-  colorValue.addEventListener('change', (event) => {
-    const selectedShirt = document.querySelector(`.${colorValue.value}`)
+  colorValue.addEventListener('change', showCorrectShirt)
+}
 
-    switch (colorValue.value) {
-      default:
-        changeColors(shirts)
-        selectedShirt.style.display = 'block'
-        selectedShirt.style.maxWidth = '100%'
-        selectedShirt.style.margin = '0'
-        selectedShirt.childNodes[3].style.width = '100%'
-    }
+const showCorrectShirt = () => {
+  const colorValue = document.querySelector('#colorInput')
+  const shirts = document.querySelectorAll('.shirts')
+  const selectedShirt = document.querySelector(`.${colorValue.value}`)
+
+  switch (colorValue.value) {
+    default:
+      changeColors(shirts)
+      selectedShirt.style.display = 'block'
+      selectedShirt.style.maxWidth = '100%'
+      selectedShirt.style.margin = '0'
+      selectedShirt.childNodes[3].style.width = '100%'
+  }
+}
+
+// Function to hide every t-shirt you didn't choose
+const changeColors = (shirts) => {
+  shirts.forEach((item) => {
+    item.style.display = 'none'
   })
 }
 
@@ -70,13 +81,6 @@ const liveInputField = () => {
   }
 }
 
-// Function to hide every t-shirt you didn't choose
-const changeColors = (shirts) => {
-  shirts.forEach((item) => {
-    item.style.display = 'none'
-  })
-}
-
 // Function with event to launch when pressing, fire other localStorage functions
 const SaveToLocalStorage = () => {
   if (window.localStorage) {
@@ -84,6 +88,15 @@ const SaveToLocalStorage = () => {
 
     checkIfLocalIsDefined()
     orderButton.addEventListener('click', storeOrderDetails)
+  }
+}
+
+// Function to check if localStorage value is defined
+const checkIfLocalIsDefined = () => {
+  if (localStorage.getItem('ShirtColor') === null) {
+    placeDefault()
+  } else {
+    getOrderDetails()
   }
 }
 
@@ -103,15 +116,6 @@ const storeOrderDetails = () => {
   localStorage.setItem('ShirtPrint', print)
   localStorage.setItem('ShirtColorPrint', colorPrint)
   localStorage.setItem('ShirtSize', size)
-}
-
-// Function to check if localStorage value is defined
-const checkIfLocalIsDefined = () => {
-  if (localStorage.getItem('ShirtColor') === null) {
-    placeDefault()
-  } else {
-    getOrderDetails()
-  }
 }
 
 // Function to get all the information from localStorage
@@ -141,18 +145,20 @@ const placeDefault = () => {
 
 // Function for form-validator in product-page
 const productFormValidator = () => {
+  const errorElement = document.getElementById('error')
+
   document.forms['productCart'].noValidate = true
   document.forms['productCart']['print'].required = false
-  const errorElement = document.getElementById('error')
+
   document.forms['productCart'].addEventListener('submit', (e) => {
     let errors = []
 
     if (printInput.value === '' || printInput.value == null) {
-      errors.push('A print with more than 3 characters is required')
+      errors.push('A print with more than 2 characters is required')
       printInput.focus()
-    } else if (printInput.value.length < 3) {
+    } else if (printInput.value.length < 2) {
       errors.push(
-        `Your print is to short. Please fill in a print with minimal 3 characters`
+        `Your print is to short. Please fill in a print with minimal 2 characters`
       )
       printInput.focus()
     }
@@ -178,8 +184,7 @@ const cartFormValidator = () => {
     const customerID = document.forms['loginForm']['customerID']
     const errorElement = document.getElementById('righterror')
     let errors = []
-    const test = 'user_sktwi3bokmvzobyz'
-    console.log(test.length)
+
     if (customerID.value === '' || customerID.value == null) {
       errors.push('Please fill in a valid user ID.')
       customerID.focus()
@@ -211,17 +216,17 @@ const cartFormValidator = () => {
     if (firstName.value === '' || firstName.value == null) {
       errors.push(`Please fill in a first-name.`)
       firstName.focus()
-    } else if (firstName.value.length < 3) {
+    } else if (firstName.value.length < 2) {
       errors.push(
-        `Your first-name is to short. Please fill in a name with minimal 3 characters`
+        `Your first-name is to short. Please fill in a name with minimal 2 characters`
       )
       firstName.focus()
     } else if (lastName.value === '' || lastName.value == null) {
       errors.push(`Please fill in a last-name.`)
       lastName.focus()
-    } else if (lastName.value.length < 3) {
+    } else if (lastName.value.length < 2) {
       errors.push(
-        `Your last-name is to short. Please fill in a name with minimal 3 characters`
+        `Your last-name is to short. Please fill in a name with minimal 2 characters`
       )
       lastName.focus()
     } else if (email.value === '' || email.value == null) {
