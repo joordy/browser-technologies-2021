@@ -294,7 +294,7 @@ Based on the test results (see screenshots below) I can conclude that my app is 
 
 ![Internet Explorer — V11.0 — Windows](https://user-images.githubusercontent.com/48051912/113212430-081fd700-9277-11eb-91a1-92875e6a3123.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -307,7 +307,7 @@ This older version of Safari has a good support. It works exactly the same as th
 
 ![saf11](https://user-images.githubusercontent.com/48051912/113212547-33a2c180-9277-11eb-91ba-c1799e2e7820.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -320,7 +320,7 @@ During the developing process I've mainly worked with this browser (Safari) and 
 
 ![saf14](https://user-images.githubusercontent.com/48051912/113212557-37cedf00-9277-11eb-89c7-bf2a7aeb535d.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -333,7 +333,7 @@ On the slightly older version of FireFox the application still works fine. Only 
 
 ![firefox](https://user-images.githubusercontent.com/48051912/113215647-78305c00-927b-11eb-989e-1153e2a73772.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -346,7 +346,7 @@ During the developing process I've mainly worked with this browser (Brave) and S
 
 ![Brave](https://user-images.githubusercontent.com/48051912/113215513-3d2e2880-927b-11eb-8bef-72a73e7e4a30.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -359,7 +359,7 @@ On older versions of chrome is the support still decent. Unthought the select bo
 
 ![Chrome 79](https://user-images.githubusercontent.com/48051912/113215517-3e5f5580-927b-11eb-9c33-47e2e055fb7e.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -372,7 +372,7 @@ The newest Opera version (which is currently is available as BETA) works fine wi
 
 ![Opera beta](https://user-images.githubusercontent.com/48051912/113215504-3a333800-927b-11eb-8f06-19f15232d01f.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -385,7 +385,7 @@ This version of Opera has the same problem as the older chrome browsers, unthoug
 
 ![Opera 66](https://user-images.githubusercontent.com/48051912/113215490-369fb100-927b-11eb-99fe-56f30e5f4a85.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely in this browser. The form validation works, based on the existing querySelector, also localStorage works fine here. When the styles are disabled the site looks fine, the core functionality still works.
 
@@ -398,7 +398,7 @@ The Safari browser seems to work perfectly on the newest iPhone devices. There a
 
 ![iphone](https://user-images.githubusercontent.com/48051912/113216002-0278c000-927c-11eb-8985-9fc1e5d2725d.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely on the Safari browser on iOS. The form validation works, based on the existing querySelector, also localStorage works fine here. It's hard to disable the JS and CSS on a phone, but when using the emulator of Lambdatest, it seemed to work fine.
 
@@ -411,7 +411,7 @@ The Chrome browser of this android device seems to work exactly the same as the 
 
 ![android chrome](https://user-images.githubusercontent.com/48051912/113215503-399aa180-927b-11eb-9e78-2c360dff7917.png)
 
-#### **Disabled elements**:
+#### **Disabled elements/languages**:
 
 The application work completely on the Chrome browser on Android. The form validation works, based on the existing querySelector, also localStorage works fine here. It's hard to disable the JS and CSS on a phone, but when using the emulator of Lambdatest, it seemed to work fine.
 
@@ -422,32 +422,32 @@ The application work completely on the Chrome browser on Android. The form valid
 Before I started coding, I made a sketch in which the flow of the user should be clear. Based on this I developed my final product.
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0; font-weight: 700;">Basic sketches</summary>
+<summary style="margin: 1em 0; font-weight: 700;">Basic sketches</summary>
 
 ![IMG_0716](https://user-images.githubusercontent.com/48051912/111471911-b54c0880-8729-11eb-93fd-daf6b4a49948.jpg)
 
 </details>
-  
-## **Wireframes**
 
-The Wireframes are based on the three layers of Progressive Enhancement. The first layer only contains HTML. The second layer consists of HTML & CSS. In the third layer it will be a combination of HTML, CSS & JS.
+## **wireflow**
+
+The wireflow are based on the three layers of Progressive Enhancement. The first layer only contains HTML. The second layer consists of HTML & CSS. In the third layer it will be a combination of HTML, CSS & JS.
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0; font-weight: 700;">HTML</summary>
+<summary style="margin: 1em 0; font-weight: 700;">HTML</summary>
 
 ![Nerdy T-Shirt HTML Wireframes](https://user-images.githubusercontent.com/48051912/113209748-b9bd0900-9273-11eb-9887-c325f1e4004a.png)
 
 </details>
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0; font-weight: 700;">HTML CSS</summary>
+<summary style="margin: 1em 0; font-weight: 700;">HTML CSS</summary>
 
 ![Nerdy T-Shirt HTML CSS Wireframes](https://user-images.githubusercontent.com/48051912/113209395-503cfa80-9273-11eb-9abc-4c1cab855f84.png)
 
 </details>
 
 <details style="margin: 1em 0;">
-  <summary style="margin: 1em 0; font-weight: 700;">HTML CSS JS</summary>
+<summary style="margin: 1em 0; font-weight: 700;">HTML CSS JS</summary>
 
 ![Nerdy T-Shirt HTML CSS JS Wireframes](https://user-images.githubusercontent.com/48051912/113208782-7d3cdd80-9272-11eb-86d7-cd784a7f3f09.png)
 
@@ -475,10 +475,11 @@ The Wireframes are based on the three layers of Progressive Enhancement. The fir
 
 ## 🔍 **Sources**
 
-- npm: express-handlebars. (2021, February 16). Npm. https://www.npmjs.com/package/express-handlebars
-- MDN: preventDefault. (2021, march 21). MDN. https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
-- StackOverflow: Styling input buttons for iPad and iPhone. (2021, march 23). StackOverflow. https://stackoverflow.com/questions/5449412/styling-input-buttons-for-ipad-and-iphone
-- MDN: express-handlebars. (2021, march 23). MDN. https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup
+- NPM. (2021, February 28). npm: express-handlebars. https://www.npmjs.com/package/express-handlebars
+- MDN. (2021d, March 15). Event.preventDefault() - Web APIs | MDN. https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+- MDN. (2021c, March 12). GlobalEventHandlers.onkeyup - Web APIs | MDN. https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup
+- Drange, J. G. (2011, March 27). Styling input buttons for iPad and iPhone. Stack Overflow. https://stackoverflow.com/questions/5449412/styling-input-buttons-for-ipad-and-iphone
+- Caniuse. (n.d.). Can I use... Support tables for HTML5, CSS3, etc. Retrieved March 20, 2021, from https://caniuse.com/
 
 ## 🔐 **License**
 
